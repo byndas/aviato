@@ -1,0 +1,34 @@
+.gallery_img {
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+  height: auto;
+  transition: 0.4s ease;
+}
+
+.gallery_text {
+  color: #01012b;
+  font-weight: 700;
+  margin: 0 auto;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-align: center;
+}
+
+.gallery_img:hover {
+  opacity: 0.4;
+}
+
+.gallery_text:hover .gallery_img {
+  opacity: 0.4;
+}
+
+#flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.glr-image {
+  width : 50rem;
+  height: 35rem
+}

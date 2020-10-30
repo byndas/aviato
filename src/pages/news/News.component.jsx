@@ -1,0 +1,69 @@
+import "./News.styles.css";
+import React, { useState, useContext } from "react";
+import { connect } from "react-redux";
+import NewsGroup from "./NewsGroup.component";
+import NewsForm from "./NewsForm";
+import Footer from "../../footer/Footer.component";
+import { LanguageContext } from "../../context/LanguageContext";
+import { backgroundColor } from "../catalog/Catalog.component";
+import translate from '../../language/translate';
+import Pagination from '../../pagination';
+
+function News ({ auth, reduxNews }) {
+  const [state, setState ] = useState(null);
+  const { language } = useContext(LanguageContext);
+  const { News } = translate[language];
+  const [currPage, setCurrPage ] = useState(1);
+  const [newsPerPage] = useState(3);
+  const indexOfLastNews = currPage * newsPerPage;
+  const indexOfFirstNews = indexOfLastNews - newsPerPage;
+  const paginate = pageNumber => setCurrPage(pageNumber);
+
+   const editPostInputs = (postObj) => {
+    setState(postObj);
+   }
+
+    let newsList;
+    if (reduxNews !== null) {
+      const newsIds = Object.keys(reduxNews).reverse();
+      const newsArr = Object.values(reduxNews).reverse();
+      const currentNews = !auth ?  newsArr.slice(indexOfFirstNews, indexOfLastNews): newsArr;
+      // collects all news items in redux store
+      newsList = currentNews
+        .map((item, index) => (
+          <NewsGroup
+            auth={auth}
+            editPostInputs={editPostInputs}
+            name={item.name}
+            title={item.title}
+            text={item.text}
+            src={item.src}
+            key={index}
+            id={newsIds[index]}
+          />
+        ));
+    
+    }
+    return (
+      <div style={backgroundColor}>
+        <h1 className="text-center font-italic heading">{News}</h1>
+        {auth && <NewsForm editObj={state} />}
+        <div className="container mt-5">
+          {newsList}
+        {!auth && <Pagination 
+            paginate={paginate} 
+            currPage={currPage} 
+            perPage={newsPerPage} 
+            total={reduxNews !== null && Object.values(reduxNews).length }/>}
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
+
+const mapStateToProps = reduxStore => ({
+  reduxNews: reduxStore.siteData.news
+});
+
+export default connect(mapStateToProps)(News);

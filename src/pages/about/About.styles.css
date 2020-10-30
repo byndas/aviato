@@ -1,0 +1,27 @@
+.heading-secondary {
+    font-size : 3.1rem;
+    text-transform: uppercase;
+    font-size: 700;
+    display: inline-block;
+    background-image: linear-gradient(to right, #539de2, #3737a0);
+    color: transparent;
+    letter-spacing: .2rem;
+    transition: all .3s;
+    -webkit-background-clip: text;
+    font-weight: 500;
+   
+  }
+
+  .heading-secondary:hover {
+    transform: skewY(2deg) skewX(10deg) scale(1.1);
+    text-shadow: .5rem 1rem 2rem rgba(black, .3);
+    
+  }
+
+ .paragraph_background {
+     background-image: linear-gradient(to right, rgba(72,148,215, .5) 0%, rgba(0,29,150, .6) 50%, transparent 100%);
+     opacity: .7;
+     border-radius: 1rem;
+ }
+
+ 

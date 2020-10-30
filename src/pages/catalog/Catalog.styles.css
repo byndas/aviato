@@ -1,0 +1,22 @@
+.pilot_images {
+  width: 15rem;
+  height: 15rem;
+}
+.heading {
+  color: #22366e;
+}
+
+.airplain_background {
+  background-color: #1b62a5;
+  color: white;
+}
+
+#flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ctl-image {
+  width : 29rem;
+  height: 18rem
+}

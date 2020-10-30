@@ -1,0 +1,77 @@
+
+.project_container {
+  width: 100%;
+  height: auto;
+  margin-bottom: -1rem;
+  background-image: url(../../images/jpg/landings/landing03.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.project_title {
+  margin-left: 40%;
+  text-transform: uppercase;
+  color: #22366e;
+}
+
+.card_project_content {
+  background-color: rgba(3, 41, 165, 0.7);
+  width: 60%;
+  height: auto;
+  color: white;
+}
+.project_content_title {
+  margin: auto;
+  background-color: rgba(3, 41, 165, 0.65);
+  width: 60%;
+  height: 18rem;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.project_content_header {
+  background-color: rgba(3, 41, 165, 0.8);
+}
+
+.project_content_title:hover {
+  background-color: rgba(3, 41, 165, 0.8);
+  transform: scale(1.03);
+  cursor: pointer;
+}
+
+.single_project {
+  margin-left: 25%;
+}
+
+.sngl-image {
+  width : 20rem;
+  height: 15rem;
+  margin-left: 30%;
+}
+
+@media (min-width: 319.98px) and (max-width: 575.98px) {
+  .card_project_content {
+    margin-top: 250px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .card_project_content {
+    margin-top: 200px;
+    width: 95%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .card_project_content {
+    margin-top: 100px;
+    width: 95%;
+  }
+}
+
+.project_form {
+  position: absolute;
+  width: 50px;
+  top: 2%;
+}

@@ -1,0 +1,31 @@
+.project_content {
+  background-image: linear-gradient(to right, #1b62a5, #01012b);
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.project_content:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.icons {
+  color: #c6d7e7;
+  transition: all 0.3s ease-in-out;
+  font-size: 1.3rem;
+}
+
+.icons:hover {
+  color: #7ba0c4;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+#flex {
+  display: flex;
+  justify-content: space-between;
+}
+.ctl-image {
+  width : 29rem;
+  height: 18rem
+}
