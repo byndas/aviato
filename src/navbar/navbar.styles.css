@@ -33,16 +33,7 @@
 
 .link_color {
   font-weight: 500;
-  transition: all 0.3s ease-in-out;
 }
-
-.link_color:hover {
-  transform: scale(1.1);
-}
-
-/* .margin_left {
-  margin-left: 40px;
-} */
 
 .language {
   width: 50px;

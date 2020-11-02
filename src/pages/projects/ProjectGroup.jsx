@@ -2,10 +2,13 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-
 import { deleteImageFireStorage, removePostFireDB } from "../../firebase/Firebase.config";
+import { LanguageContext } from "../../context/LanguageContext";
+import translate from '../../language/translate'
+
 
 class ProjectGroup extends Component {
+  static contextType = LanguageContext;
   constructor(props) {
     super(props);
     this.state = { expanded: true };
@@ -33,6 +36,8 @@ class ProjectGroup extends Component {
     removePostFireDB("projects", id);
   }
   render() {
+    const { language } = this.context;
+    const { ReadMore } = translate[language];
     const { expanded } = this.state;
     const { id, src, title, name, text, imgFile, auth } = this.props;
     return (
@@ -57,7 +62,7 @@ class ProjectGroup extends Component {
             </div>
           )}
          </div>
-         <h5 className="card-title text-center">{title}</h5>
+         <h5 className="card-title text-center p-3">{title}</h5>
        <div className="card-body d-flex">
             <div className="col-md-3">
               <img src={src} alt="..." className="img-thumbnail" />
@@ -73,18 +78,17 @@ class ProjectGroup extends Component {
                 data-toggle="collapse"
                 data-target={`#${id}`}
                 aria-expanded="false"
-                aria-controls="collapseExample"
-              >
-                Read More
+                aria-controls="collapseExample">
+                {ReadMore}
               </button>
           </div>
         </div>
       </div>
         <div className="collapse single_project" id={id}>
-         <div className="col-md-6">
-           <img src={src} className="sngl-image mt-5 img-thumbnail" alt="..." />
+         <div className="container col-md-6">
+           <img src={src} className="mt-5 img-thumbnail" alt="..." />
          </div>
-           <div style={{backgroundColor: 'blue', color: 'white'}} className="col-md-8 text-center mt-3 rounded p-3">{text}</div>
+           <div style={{backgroundColor: 'blue', color: 'white'}} className="container col-md-8 text-center mt-3 rounded p-3">{text}</div>
         </div>
       </div>
     );

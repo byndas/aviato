@@ -3,8 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { deleteImageFireStorage, removePostFireDB } from "../../firebase/Firebase.config";
+import translate from '../../language/translate';
+import { LanguageContext } from "../../context/LanguageContext";
+
 
 class AirPlaneGroup extends Component {
+  static contextType = LanguageContext;
   constructor(props) {
     super(props);
     this.state = { expanded: true };
@@ -38,6 +42,8 @@ class AirPlaneGroup extends Component {
   render() {
     const { id, src, title, name, text, imgFile, auth } = this.props;
     const { expanded } = this.state;
+    const { language } = this.context;
+    const { ReadMore } = translate[language];
     return (
       <div className="col mb-4">
         <div className="card shadow p-3 mb-5 rounded border-0 airplain_background">
@@ -57,7 +63,7 @@ class AirPlaneGroup extends Component {
               aria-expanded="false"
               aria-controls="collapseExample"
             >
-              See More..
+              {ReadMore}
             </button>
             {auth && (
               <div id="flex" className="float-right">

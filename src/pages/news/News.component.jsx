@@ -14,7 +14,7 @@ function News ({ auth, reduxNews }) {
   const { language } = useContext(LanguageContext);
   const { News } = translate[language];
   const [currPage, setCurrPage ] = useState(1);
-  const [newsPerPage] = useState(3);
+  const [newsPerPage] = useState(2);
   const indexOfLastNews = currPage * newsPerPage;
   const indexOfFirstNews = indexOfLastNews - newsPerPage;
   const paginate = pageNumber => setCurrPage(pageNumber);
@@ -46,7 +46,7 @@ function News ({ auth, reduxNews }) {
     }
     return (
       <div style={backgroundColor}>
-        <h1 className="text-center font-italic heading">{News}</h1>
+        <h1 className="text-center font-italic heading p-4 text-uppercase">{News}</h1>
         {auth && <NewsForm editObj={state} />}
         <div className="container mt-5">
           {newsList}

@@ -46,7 +46,7 @@ function Projects ({auth, reduxProjects}) {
     return (
       <div>
         <div className="project_container">
-          <h1 className="project_title font-italic">{Projects}</h1>
+          <h1 className="project_title font-italic p-5">{Projects}</h1>
           {auth && (
             <div className="container project_form">
                <button type="button" className="btn btn-info btn-sm mt-5" data-toggle="modal" data-target="#create" >

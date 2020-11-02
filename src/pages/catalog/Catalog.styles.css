@@ -2,8 +2,9 @@
   width: 15rem;
   height: 15rem;
 }
+
 .heading {
-  color: #22366e;
+  color: #072064;
 }
 
 .airplain_background {
@@ -11,12 +12,72 @@
   color: white;
 }
 
-#flex {
-  display: flex;
-  justify-content: space-between;
+.ctl-image {
+  width : 100%;
+  height: 18rem;
 }
 
-.ctl-image {
-  width : 29rem;
-  height: 18rem
+@media (min-width: 320px){
+  .ctl-image {
+    height: 10rem;
+  }
+  .airplane {
+    font-size: 1.3rem;
+  }
+  .pilot_container {
+    display: block;
+  }
+  .pilot_images {
+    margin-left: 8%;
+  }
+}
+
+@media (min-width: 360px){
+  .pilot_images {
+    margin-left: 12%;
+  }
+}
+
+@media (min-width: 411px){
+  .ctl-image {
+    height: 15rem;
+  }
+  .pilot_container {
+    display: block;
+  }
+  .pilot_images {
+    margin-left: 16%;
+  }
+}
+@media (min-width: 540px){
+  .pilot_images {
+    margin-left: 24%;
+  }
+}
+
+@media (min-width: 768px){
+  .ctl-image {
+    height: 15rem;
+  }
+  .pilot_container {
+    display: flex;
+  }
+  .pilot_images {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 992px){
+  .ctl-image {
+    height: 18rem;
+  }
+  .airplane {
+    font-size: 2rem;
+  }
+  .pilot_container {
+    display: flex;
+  }
+  .pilot_images {
+    margin-left: 0;
+  }
 }
