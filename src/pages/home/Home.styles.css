@@ -62,76 +62,6 @@
   }
 }
 
-@media (min-width: 350px) and (max-width: 575.98px) {
-  .slideshow li {
-    list-style: none;
-    width: 100%;
-    height: 700px;
-    position: absolute;
-    top: 18px;
-    left: 0;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: local;
-    opacity: 0;
-    z-index: -1;
-    animation: imageAnimation 50s linear infinite;
-  }
-  .links {
-    margin-top: 20rem;
-    margin-left: auto;
-    display: inline-block;
-  }
-}
-
-@media (min-width: 400px) and (max-width: 550px) {
-  .links {
-    margin-top: 15rem;
-    margin-left: auto;
-    display: inline-block;
-  }
-}
-
-@media (min-width: 576px) and (max-width: 767.98px) {
-  .slideshow li {
-    list-style: none;
-    width: 100%;
-    height: 600px;
-    position: absolute;
-    top: 18px;
-    left: 0;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: local;
-    opacity: 0;
-    z-index: -1;
-    animation: imageAnimation 50s linear infinite;
-  }
-  .links {
-    margin-top: 23rem;
-    margin-left: auto;
-    display: inline-block;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .links {
-    margin-top: 23rem;
-    margin-left: auto;
-    display: inline-block;
-  }
-}
-
-@media (min-width: 992px) and (max-width: 1199.98px) {
-  .links {
-    margin-top: 22rem;
-    margin-left: auto;
-    display: inline-block;
-  }
-}
-
 .runways {
   margin-top: 10rem;
   margin-left: 5rem;
@@ -153,6 +83,21 @@
   display: block;
 }
 
+.notami {
+  margin-top: 0.5rem;
+  margin-left: 5rem;
+  display: block;
+}
+
+.notami button {
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+.notami button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
 .usefulLinks button {
   background-color: rgba(255, 255, 255, 0.5);
   transition: all 0.3s ease-in-out;
@@ -164,4 +109,30 @@
 
 .list_content {
   z-index: 200000;
+}
+
+@media (min-width: 320px){
+  .runways {
+    margin-top: 6rem;
+    margin-left: .7rem;
+  }
+  .usefulLinks {
+    margin-left: 2.5rem;
+  }
+  .notami {
+    margin-left: 6rem;
+  }
+}
+
+@media (min-width: 360px){
+  .runways {
+  
+    margin-left: 2.2rem;
+  }
+  .usefulLinks {
+    margin-left: 4rem;
+  }
+  .notami {
+    margin-left: 7.5rem;
+  }
 }
