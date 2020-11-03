@@ -14,7 +14,7 @@ import Gallery from "./pages/gallery/Gallery.component";
 import Login from "./pages/login/Login.component";
 import News from "./pages/news/News.component";
 import Projects from "./pages/projects/Projects.component";
-import SearchResults from "./pages/searchResults/SearchResults.component";
+import SearchResults from "./pages/SearchResults.component";
 
 // 1nt3rnat10nal
 
@@ -95,7 +95,8 @@ class App extends React.Component {
             <Route
               exact
               path="/projects"
-              render={() => (<Projects auth={auth} />)} />
+              render={() => <Projects auth={auth} />}
+            />
             {/* <Route
               exact
               path="/projects/:id"

@@ -1,9 +1,8 @@
 import "./Catalog.styles.css";
 import React, { Component } from "react";
-import AirPlaneGroup from "./AirPlanegroup";
+import PagePosts from "../PagePosts.component";
 import { LanguageContext } from "../../context/LanguageContext";
-import translate from '../../language/translate';
-
+import translate from "../../language/translate";
 
 class AirPlane extends Component {
   static contextType = LanguageContext;
@@ -21,7 +20,7 @@ class AirPlane extends Component {
       planeList = planeArr
         .reverse()
         .map((airplane, index) => (
-          <AirPlaneGroup
+          <PagePosts
             auth={auth}
             editPostInputs={editPostInputs}
             name={airplane.name}
@@ -29,12 +28,15 @@ class AirPlane extends Component {
             src={airplane.src}
             id={planeIds[index]}
             key={index}
+            pageName="catalog"
           />
         ));
     }
     return (
       <div className="container border-bottom">
-        <h1 className="text-center font-italic heading p-3 airplane text-uppercase">{AirPlane}</h1>
+        <h1 className="text-center font-italic heading p-3 airplane text-uppercase">
+          {AirPlane}
+        </h1>
         <div className="row row-cols-1 row-cols-md-2 mt-5">{planeList}</div>
       </div>
     );
