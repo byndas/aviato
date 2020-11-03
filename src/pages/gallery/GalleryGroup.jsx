@@ -44,12 +44,13 @@ class GalleryGroup extends Component {
     const { src, text, imgFile, auth, id } = this.props;
     // HOW TO FINISH THIS?
     return (
+      <>
       <div className="carousel-item mt-5 mb-5 rounded">
-        <img src={src} className="gallery_img glr-image" alt="..." />
+        <img src={src} className="gallery_img" alt="..." />
           <div id="flex" className="carousel-caption">
-           <p className="gallery_text font-italic text-center">{text}</p>
-          </div>
-          {auth && <div>
+           <p className="gallery_text font-italic text-center">
+             {text}
+             {auth && <div>
            <FontAwesomeIcon style={{color: 'blue'}} type="button"  onClick={() => {this.handleEdit(id, src, text, imgFile)}}
               className="icons"
               icon={faEdit}
@@ -59,7 +60,10 @@ class GalleryGroup extends Component {
               icon={faTrash}
             />
           </div>}
+             </p>
+          </div>
       </div>
+      </>
     );
   }
 }

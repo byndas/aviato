@@ -16,60 +16,6 @@
   border: 0
 }
 
-@media (max-width: 575.98px) { 
-    .google_map {
-        right: 0;
-        top: 300px;
-        left: 50px;
-    }
-    .google_map iframe{
-        width: 15rem;
-        height: 8rem;
-        border: 0
-      }
-      .contact_container {
-        height: 500px;
-        display: flex;
-    }
- }
-
- @media (min-width: 576px) and (max-width: 767.98px) { 
-    .google_map {
-        right: 0;
-        top: 15px;
-    }
-    .google_map iframe{
-        width: 15rem;
-        height: 15rem;
-        border: 0
-      }
-}
-
- @media (min-width: 768px) and (max-width: 991.98px) {
-    .google_map {
-        right: 10px;
-        top: 15px;
-    }
-    .google_map iframe{
-        width: 15rem;
-        height: 15rem;
-        border: 0
-      }
-}
-
-@media (min-width: 992px) and (max-width: 1199.98px) { 
-    .google_map {
-        right: 10px;
-        top: 15px;
-    }
-    .google_map iframe{
-        width: 20rem;
-        height: 20rem;
-        border: 0
-      }
-}
-
-
 .facebook_icon {
     width: 15px;
     height: 15px;
@@ -95,3 +41,37 @@
 .contact_hover:hover{
     background-image: linear-gradient(to right, #74afe6, #1f1f9e);
 }
+
+@media (min-width: 320px){
+    .google_map {
+        width: 100%;
+        top: 19rem;
+        left: 0;
+    }
+    .google_map iframe {
+        width: 90%;
+        height: 15rem;
+    }
+    
+}
+
+@media (min-width: 360px){
+    .contact_hover {
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 992px){
+    .google_map {
+        width: 60%;
+        top: 0;
+        left: 24rem;
+    }
+    .google_map iframe {
+        height: 18rem;
+    }
+    .contact_hover {
+        margin-left: 0;
+    }
+}
+

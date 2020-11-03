@@ -13,35 +13,27 @@ function Contact() {
     <div style={backgroundColor}>
       <div className="contact_container">
         <div className="container text-center mt-5 position-relative">
-          <div className="row border rounded-pill shadow p-1 mb-2 bg-white  p-1 contact_hover">
+          <div className="row border rounded-pill shadow  mb-2 bg-white  p-1 contact_hover">
             <div className="col">
               <div className="media">
-                <img
-                  className="facebook_icon mt-3"
-                  src={facebook}
-                  alt="facebookIcon"
-                />
+                <img className="facebook_icon mt-3" src={facebook} alt="facebookIcon"/>
                 <div className="media-body">
                   <p className="mt-3"> dkodkfo@dm.com</p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="row border rounded-pill shadow p-1 mb-2 bg-white  p-1 contact_hover">
+          <div className="row border rounded-pill shadow  mb-2 bg-white  p-1 contact_hover">
             <div className="col">
               <div className="media">
-                <img
-                  src={InstagramIcon}
-                  className="instagram_icon mt-3"
-                  alt="instagramIcon"
-                />
+                <img src={InstagramIcon} className="instagram_icon mt-3" alt="instagramIcon" />
                 <div className="media-body">
                   <p className="mt-3"> dkodkfo@instagram.com</p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="row border rounded-pill shadow p-1 mb-2 bg-white  p-1 contact_hover">
+          <div className="row border rounded-pill shadow  mb-2 bg-white  p-1 contact_hover">
             <div className="col">
               <div className="media">
                 <FontAwesomeIcon icon={faPhone} className="mt-3" />
@@ -51,7 +43,7 @@ function Contact() {
               </div>
             </div>
           </div>
-          <div className="row border rounded-pill shadow p-1 mb-2 bg-white  p-1 contact_hover">
+          <div className="row border rounded-pill shadow  mb-2 bg-white  p-1 contact_hover">
             <div className="col">
               <div className="media">
                 <FontAwesomeIcon icon={faEnvelope} className="mt-3" />

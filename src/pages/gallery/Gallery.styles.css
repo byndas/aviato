@@ -23,12 +23,31 @@
   opacity: 0.4;
 }
 
-#flex {
-  display: flex;
-  justify-content: space-between;
+
+@media (min-width: 320px){
+  .gallery_img {
+    width: 100%;
+    height: 17rem;
+  }
 }
 
-.glr-image {
-  width : 50rem;
-  height: 35rem
+@media (min-width: 540px){
+  .gallery_img {
+    width: 90%;
+    height: 22rem;
+  }
+}
+
+@media (min-width: 768px){
+  .gallery_img {
+    width: 80%;
+    height: 28rem;
+  }
+}
+
+@media (min-width: 992px){
+  .gallery_img {
+    width: 70%;
+    height: 30rem;
+  }
 }
