@@ -29,10 +29,3 @@ ReactDOM.render(
 // Learn more about service workers: https://bit.ly/CRA-PWA
 
 //serviceWorker.unregister();
-
-// {
-//   "rules": {
-//     ".read": true,
-//     ".write": "auth.uid === 'c53LRiDua6dMli1jCeNtU8TiLy32'"
-//   }
-// }
