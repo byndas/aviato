@@ -1,18 +1,16 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import {
   pushOrSetPostFireDB,
   putImageFireStorage,
   deleteImageFireStorage
-} from "../../firebase/Firebase.config";
-// import * as adminForm from "../../pages/adminFormMethods";
-// import { emptyState } from "../adminFormMethods";
+} from "../firebase/Firebase.config";
 
-class NewsForm extends PureComponent {
+class AdminForm extends Component {
   constructor(props) {
     super(props);
     // state controls form inputs
     this.state = {
-      imgFile: null, // "choose file" click populates imgFile
+      imgFile: null, // "choose file" button populates imgFile
       src: null,
       id: null,
       name: "",
@@ -25,7 +23,17 @@ class NewsForm extends PureComponent {
     this.newImage = this.newImage.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+  emptyState = {
+    imgFile: null,
+    src: null,
+    id: null,
+    name: "",
+    title: "",
+    text: ""
+  };
   componentWillReceiveProps(nextProps) {
+    console.log("EDIT OBJ", nextProps.editObj);
+
     const nextPropsEditObj = nextProps.editObj;
 
     if (nextPropsEditObj !== null) {
@@ -42,14 +50,6 @@ class NewsForm extends PureComponent {
       }
     }
   }
-  emptyState = {
-    imgFile: null,
-    src: null,
-    id: null,
-    name: "",
-    title: "",
-    text: ""
-  };
   clearState() {
     this.setState(this.emptyState);
   }
@@ -63,6 +63,8 @@ class NewsForm extends PureComponent {
 
     let reader = new FileReader();
     let file = e.target.files[0];
+    console.log("NEW IMAGE", file);
+
     reader.onloadend = () => {
       this.setState({ imgFile: file });
     };
@@ -72,61 +74,72 @@ class NewsForm extends PureComponent {
   }
   handleSubmit(e) {
     e.preventDefault();
+    console.log("STATE", this.state);
+
     if (this.state === this.emptyState) return;
 
     const { src, name, title, text } = this.state;
-
-    const postObj = { src, name, title, text };
+    const { pageName } = this.props;
+    const postObj = {
+      src,
+      name,
+      title,
+      text
+    };
     // IF NEW POST
     if (this.state.id === null) {
       // WITHOUT NEW IMAGE
       if (this.state.imgFile === null) {
         return alert("UPLOAD AN IMAGE");
       }
-      putImageFireStorage("news", this.state, postObj);
+      console.log("PUTTING NEW IMAGE INTO FIRE STORAGE:", postObj.src);
+      putImageFireStorage(pageName, this.state, postObj);
     }
-    // SINCE EDIT POST
+    // SINCE EDIT POST WITH NEW IMAGE
     else if (this.state.imgFile !== null) {
-      // IF WITH NEW IMAGE
-      if (this.state.imgFile !== null) {
-        deleteImageFireStorage(this.state.src);
-        putImageFireStorage("news", this.state, postObj);
-      }
+      deleteImageFireStorage(this.state.src);
+      console.log("PUTTING NEW IMAGE INTO FIRE STORAGE");
+      putImageFireStorage(pageName, this.state, postObj);
     } else {
-      // SINCE WITHOUT NEW IMAGE
-      pushOrSetPostFireDB("news", this.state, postObj);
+      // SINCE EDIT POST WITHOUT NEW IMAGE
+      console.log("PUTTING EDIT POST NO NEW IMAGE INTO FIRE STORAGE");
+      pushOrSetPostFireDB(pageName, this.state, postObj);
     }
   }
   render() {
     const { name, title, text } = this.state;
+    const { pageName } = this.props;
     return (
-      // NAME, TITLE, TEXT, IMG ADMIN INPUTS
       <div style={{ width: "50%", marginBottom: "50px" }} className="container">
         <form onSubmit={this.handleSubmit} id="form">
-          <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <input
-              value={name}
-              name="name"
-              onChange={this.handleChange}
-              type="text"
-              className="form-control"
-              id="name"
-              placeholder="name"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="title">Title</label>
-            <input
-              value={title}
-              name="title"
-              onChange={this.handleChange}
-              type="text"
-              className="form-control"
-              id="title"
-              placeholder="title"
-            />
-          </div>
+          {pageName !== "gallery" && (
+            <div className="form-group">
+              <label htmlFor="name">Name</label>
+              <input
+                value={name}
+                name="name"
+                onChange={this.handleChange}
+                type="text"
+                className="form-control"
+                id="name"
+                placeholder="name"
+              />
+            </div>
+          )}
+          {pageName !== "catalog" && pageName !== "gallery" && (
+            <div className="form-group">
+              <label htmlFor="title">Title</label>
+              <input
+                value={title}
+                name="title"
+                onChange={this.handleChange}
+                type="text"
+                className="form-control"
+                id="title"
+                placeholder="title"
+              />
+            </div>
+          )}
           <div className="form-group">
             <label htmlFor="text">Text</label>
             <textarea
@@ -163,4 +176,4 @@ class NewsForm extends PureComponent {
   }
 }
 
-export default NewsForm;
+export default AdminForm;

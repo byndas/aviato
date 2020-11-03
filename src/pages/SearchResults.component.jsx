@@ -1,5 +1,4 @@
 import React from "react";
-import "./SearchResults.styles.css";
 import { connect } from "react-redux";
 
 class SearchResults extends React.Component {
@@ -11,6 +10,7 @@ class SearchResults extends React.Component {
     if (reduxState !== null) {
       if (typeof reduxState !== "undefined") {
         if (finalResultArr.length < 20) {
+          console.log("REDUX STORE", reduxState);
           const pageMatches = [];
           const pageIds = Object.keys(reduxState);
           const pageValues = Object.values(reduxState);
@@ -30,13 +30,14 @@ class SearchResults extends React.Component {
             }
           }
           let pageMatchDivArray = pageMatches.map((item, index) => (
-            <div className='container text-center mt-5 border-bottom' id={pageIds[index]} key={pageIds[index]}>
-              <img className='img-thumbnail ctl-image' src={item.src} alt={item.name}/>
-              <h2>{item.name}</h2>
-              <p>{item.title}</p>
-              <p className='rounded p-3'>{item.text}</p>
+            <div id={pageIds[index]} key={pageIds[index]}>
+              {item.name}
+              {item.title}
+              {item.text}
+              <img src={item.src} alt="" />
             </div>
           ));
+          console.log("pageMatchDivArray", pageMatchDivArray);
           finalResultArr.push(...pageMatchDivArray);
         }
       }
@@ -58,13 +59,13 @@ class SearchResults extends React.Component {
       } else {
         finalSearchResults.push("NO SEARCH RESULTS");
       }
+      console.log("FINAL SEARCH RESULT", finalSearchResults);
     }
-    return <div className="container">{finalSearchResults}</div>;
+    return <div id="container">{finalSearchResults}</div>;
   }
 }
-// GIVES SearchResults COMPONENT ACCESS TO ALL OF REDUX STORE DATA
 const mapStateToProps = reduxState => ({
   entireRedux: reduxState.siteData
 });
 
-export default connect(mapStateToProps, null)(SearchResults);
+export default connect(mapStateToProps)(SearchResults);

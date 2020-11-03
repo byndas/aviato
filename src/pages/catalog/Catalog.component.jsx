@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import CatalogForm from "./CatalogForm";
+import AdminForm from "../AdminForm.component";
 import AirPlane from "./AirPlane.component";
 import Pilots from "./Pilots.component";
 import Footer from "../../footer/Footer.component";
@@ -26,7 +26,7 @@ class Catalog extends Component {
 
     return (
       <div style={backgroundColor}>
-        {auth && <CatalogForm editObj={this.state} />}
+        {auth && <AdminForm editObj={this.state} pageName="catalog" />}
         <AirPlane
           auth={auth}
           editPostInputs={this.editPostInputs}
