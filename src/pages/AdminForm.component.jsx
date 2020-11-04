@@ -102,7 +102,7 @@ class AdminForm extends Component {
       putImageFireStorage(pageName, this.state, postObj);
     } else {
       // SINCE EDIT POST WITHOUT NEW IMAGE
-      console.log("PUTTING EDIT POST NO NEW IMAGE INTO FIRE STORAGE");
+      console.log("PUTTING EDIT POST (NO NEW IMAGE) INTO FIRE DB");
       pushOrSetPostFireDB(pageName, this.state, postObj);
     }
   }
