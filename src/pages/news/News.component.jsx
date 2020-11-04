@@ -5,8 +5,8 @@ import PagePosts from "../PagePosts.component";
 import AdminForm from "../AdminForm.component";
 import Pagination from "../Pagination.component";
 import Footer from "../../footer/Footer.component";
-import { LanguageContext } from "../../context/LanguageContext";
 import { backgroundColor } from "../catalog/Catalog.component";
+import { LanguageContext } from "../../context/LanguageContext";
 import translate from "../../language/translate";
 
 function News({ auth, reduxNews }) {

@@ -18,7 +18,7 @@ class PagePosts extends Component {
     this.handleDelete = this.handleDelete.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
-  handleEdit(id, src, title, name, text, imgFile) {
+  handleEdit(id, src, text, title, name) {
     // scrolls up to Form
     window.scrollTo(0, 0);
     // populates sibling Form.jsx state (via parent component)
@@ -26,10 +26,9 @@ class PagePosts extends Component {
     const editObj = {
       id,
       src,
-      name,
-      title,
       text,
-      imgFile
+      title,
+      name
     };
     console.log("PagePosts editObj", editObj);
     this.props.editPostInputs(editObj);
@@ -54,7 +53,7 @@ class PagePosts extends Component {
     const { expanded } = this.state;
     const { language } = this.context;
     const { ReadMore } = translate[language];
-    const { id, src, imgFile, title, name, text, auth, pageName } = this.props;
+    const { auth, id, src, text, title, name, pageName } = this.props;
 
     switch (pageName) {
       case "projects":
@@ -68,7 +67,7 @@ class PagePosts extends Component {
                     <FontAwesomeIcon
                       type="button"
                       onClick={() => {
-                        this.handleEdit(id, src, title, name, text);
+                        this.handleEdit(id, src, text, title, name);
                       }}
                       className="icons"
                       icon={faEdit}
@@ -136,7 +135,7 @@ class PagePosts extends Component {
                   <FontAwesomeIcon
                     type="button"
                     onClick={() => {
-                      this.handleEdit(id, src, title, name, text, imgFile);
+                      this.handleEdit(id, src, text, title, name);
                     }}
                     icon={faEdit}
                   />
@@ -196,7 +195,7 @@ class PagePosts extends Component {
                       <FontAwesomeIcon
                         type="button"
                         onClick={() => {
-                          this.handleEdit(id, src, title, name, text, imgFile);
+                          this.handleEdit(id, src, text, title, name);
                         }}
                         className="icons"
                         icon={faEdit}
@@ -235,7 +234,7 @@ class PagePosts extends Component {
                         style={{ color: "blue" }}
                         type="button"
                         onClick={() => {
-                          this.handleEdit(id, src, null, null, text, imgFile);
+                          this.handleEdit(id, src, text);
                         }}
                         className="icons"
                         icon={faEdit}
