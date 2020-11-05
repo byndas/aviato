@@ -3,7 +3,7 @@ import {
   pushOrSetPostFireDB,
   putImageFireStorage,
   deleteImageFireStorage
-} from "../firebase/Firebase.config";
+} from "../Firebase.config";
 
 class AdminForm extends Component {
   constructor(props) {

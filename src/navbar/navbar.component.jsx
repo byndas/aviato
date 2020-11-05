@@ -7,7 +7,7 @@ import youtube from "../images/svg/youtube.svg";
 import instagramIcon from "../images/svg/instagramIcon.svg";
 import facebookIcon from "../images/svg/facebookIcon.svg";
 import { LanguageContext } from "../context/LanguageContext";
-import { fireAuth } from "../firebase/Firebase.config";
+import { fireAuth } from "../Firebase.config";
 import translate from "../language/translate";
 
 class Navbar extends React.Component {

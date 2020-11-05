@@ -4,10 +4,7 @@ import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { LanguageContext } from "../context/LanguageContext";
 import translate from "../language/translate";
-import {
-  deleteImageFireStorage,
-  removePostFireDB
-} from "../firebase/Firebase.config";
+import { deleteImageFireStorage, removePostFireDB } from "../Firebase.config";
 
 class PagePosts extends Component {
   static contextType = LanguageContext;
