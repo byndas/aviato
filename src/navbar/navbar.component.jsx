@@ -217,8 +217,7 @@ class Navbar extends React.Component {
                 data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent"
                 aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
+                aria-label="Toggle navigation" >
                 {Search}
               </button>
             </form>
@@ -227,12 +226,8 @@ class Navbar extends React.Component {
                 LOG OUT
               </div>
             )}
-            <select
-              className="language"
-              value={language}
-              onChange={handleChange}
-            >
-              <option value="Geo">Geo</option>
+            <select className="language" value={language} onChange={handleChange} >
+              <option value="Geo"> Geo</option>
               <option value="Eng">Eng</option>
               <option value="Rus">Rus</option>
             </select>
