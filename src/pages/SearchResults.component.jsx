@@ -30,11 +30,11 @@ class SearchResults extends React.Component {
             }
           }
           let pageMatchDivArray = pageMatches.map((item, index) => (
-            <div id={pageIds[index]} key={pageIds[index]}>
-              {item.name}
-              {item.title}
-              {item.text}
-              <img src={item.src} alt="" />
+            <div className='container text-center mt-5 border-bottom' id={pageIds[index]} key={pageIds[index]}>
+              <img className='img-thumbnail' src={item.src} alt={item.name}/>
+              <h2>{item.name}</h2>
+              <p>{item.title}</p>
+              <p className='rounded p-3'>{item.text}</p>
             </div>
           ));
           console.log("pageMatchDivArray", pageMatchDivArray);

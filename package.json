@@ -49,17 +49,6 @@
   },
   "devDependencies": {
     "case-sensitive-paths-webpack-plugin": "^2.3.0"
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.jsx",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lemokh/aviato.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lemokh/aviato/issues"
-  },
-  "homepage": "https://github.com/lemokh/aviato#readme"
+  }
 }
+

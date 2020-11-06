@@ -12,7 +12,6 @@ class Gallery extends Component {
     super(props);
     // state controls form inputs
     this.state = null;
-
     this.editPostInputs = this.editPostInputs.bind(this);
   }
 
