@@ -167,11 +167,3 @@ export const pushOrSetPostFireDB = (pageName, state, postObj) => {
 //------------------------------------------------------
 //------------------------------------------------------
 //------------------------------------------------------
-export const getFireDbPage = (pageName, dispatchAction) => {
-  // LISTENER: UPDATES REDUX when Fire DB page changes
-
-  fireDbRef.child(pageName).on("value", snapshot => {
-    console.log("FIRE DB PAGE SNAPSHOT:", snapshot.val());
-    dispatchAction(snapshot.val());
-  });
-};
