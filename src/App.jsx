@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { fireAuth, fireDbRef } from "./firebase/Firebase.config";
+import { fireAuth, fireDbRef } from "./Firebase.config";
 import { updateReduxWithFireDb } from "./redux/site/site.actions";
 import { LanguageProvider } from "./context/LanguageContext";
 
@@ -97,11 +97,6 @@ class App extends React.Component {
               path="/projects"
               render={() => <Projects auth={auth} />}
             />
-            {/* <Route
-              exact
-              path="/projects/:id"
-              component={SingleProject}
-            /> */}
             <Redirect to="/" />
           </Switch>
         </LanguageProvider>
