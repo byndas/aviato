@@ -29,18 +29,18 @@ class PagePosts extends Component {
       title,
       name
     };
-    console.log("PagePosts editObj", editObj);
+  
     this.props.editPostInputs(editObj);
   }
   handleDelete(id, src, pageName) {
-    console.log("POST FIRE DB ID TO DELETE: ", id);
+
 
     if (src !== null) {
-      console.log("DELETING IMAGE FROM FIRE STORAGE", src);
+
       // DELETES IMAGE FROM FIREBASE STORAGE
       deleteImageFireStorage(src);
     }
-    console.log("REMOVING POST FROM FIRE DB");
+
     // REMOVES POST FROM FIREBASE DB
     removePostFireDB(pageName, id);
   }
@@ -160,7 +160,7 @@ class PagePosts extends Component {
                 alt={name}
               />
               <h5 className="text-center p-3">{title}</h5>
-              <p className="text-center news-text">
+              <p className="text-center news-text font-weight-bold">
                 {language === 'Geo' ? textGeo : language === 'Eng' ? textEng : language === 'Rus' ? textRus : ''} 
               </p>
             </div>
@@ -234,7 +234,7 @@ class PagePosts extends Component {
         );
       case "gallery":
         return (
-          <div>
+         
             <div className="carousel-item mt-5 mb-5 rounded">
               <img src={src} className="gallery_img" alt="..." />
               <div id="flex" className="carousel-caption">
@@ -265,7 +265,7 @@ class PagePosts extends Component {
                 </p>
               </div>
             </div>
-          </div>
+        
         );
       default:
         return;

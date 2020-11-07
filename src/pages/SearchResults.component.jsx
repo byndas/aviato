@@ -12,7 +12,7 @@ class SearchResults extends React.Component {
     if (reduxState !== null) {
       if (typeof reduxState !== "undefined") {
         if (finalResultArr.length < 20) {
-          console.log("REDUX STORE", reduxState);
+        
           const pageMatches = [];
           const pageIds = Object.keys(reduxState);
           const pageValues = Object.values(reduxState);
@@ -46,18 +46,18 @@ class SearchResults extends React.Component {
             }
           }
           let pageMatchDivArray = pageMatches.map((item, index) => (
-            <div   className="container text-center mt-5 border-bottom"
+            <div className="container text-center mt-5 border-bottom"
               id={pageIds[index]}
               key={pageIds[index]} >
               <img className="img-thumbnail" src={item.src} alt={item.name} />
-              <h2>{item.name}</h2>
-              <p>{item.title}</p>
+              <h2><strong>{item.name}</strong></h2>
+              <p><strong>{item.title}</strong></p>
               <p className="rounded p-3">
                 {language === 'Geo' ? item.textGeo : language === 'Eng' ? item.textEng : language === 'Rus' ? item.textRus : 'not found'}
               </p>
             </div>
           ));
-          console.log("pageMatchDivArray", pageMatchDivArray);
+        
           finalResultArr.push(...pageMatchDivArray);
         }
       }
@@ -80,9 +80,9 @@ class SearchResults extends React.Component {
       } else {
         finalSearchResults.push("NO SEARCH RESULTS");
       }
-      console.log("FINAL SEARCH RESULT", finalSearchResults);
+  
     }
-    return <div id="container">{finalSearchResults}</div>;
+    return <div className="container">{finalSearchResults}</div>;
   }
 }
 const mapStateToProps = reduxState => ({

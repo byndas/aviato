@@ -36,8 +36,6 @@ class AdminForm extends Component {
     textRus: ""
   };
   componentWillReceiveProps(nextProps) {
-    console.log("EDIT OBJ", nextProps.editObj);
-
     const nextPropsEditObj = nextProps.editObj;
 
     if (nextPropsEditObj !== null) {
@@ -80,7 +78,6 @@ class AdminForm extends Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    console.log("STATE", this.state);
 
     if (this.state === this.emptyState) return;
 
@@ -100,17 +97,14 @@ class AdminForm extends Component {
       if (this.state.imgFile === null) {
         return alert("UPLOAD AN IMAGE");
       }
-      console.log("PUTTING NEW IMAGE INTO FIRE STORAGE:", postObj.src);
       putImageFireStorage(pageName, this.state, postObj);
     }
     // SINCE EDIT POST WITH NEW IMAGE
     else if (this.state.imgFile !== null) {
       deleteImageFireStorage(this.state.src);
-      console.log("PUTTING NEW IMAGE INTO FIRE STORAGE");
       putImageFireStorage(pageName, this.state, postObj);
     } else {
       // SINCE EDIT POST WITHOUT NEW IMAGE
-      console.log("PUTTING EDIT POST (NO NEW IMAGE) INTO FIRE DB");
       pushOrSetPostFireDB(pageName, this.state, postObj);
     }
   }
