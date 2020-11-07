@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import "./Home.styles.css";
-import useWeatherState from "../../hooks/useWeatherState";
+import useWeatherState from "./useWeatherState";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Notami from "./Notami";
 import Runways from "./Runways.component";
 import { faPlaneDeparture } from "@fortawesome/free-solid-svg-icons";
 import { faShare } from "@fortawesome/free-solid-svg-icons";
@@ -12,7 +11,9 @@ import translate from "../../language/translate";
 
 function Home() {
   const { language } = useContext(LanguageContext);
-  const { WeatherOnTheRunways, usefulLinks } = translate[language];
+  const { WeatherOnTheRunways, usefulLinks, Notami, NotamiAgency } = translate[
+    language
+  ];
   const [tbilisi, setTbilisi] = useWeatherState({});
   const [batumi, setBatumi] = useWeatherState({});
   const [kutaisi, setKutaisi] = useWeatherState({});
@@ -39,9 +40,7 @@ function Home() {
       </ul>
       <div className="links">
         <div className="btn-group dropright runways show">
-          <button type="button" className="btn">
-            {WeatherOnTheRunways}
-          </button>
+          <button className="btn btn-Runways">{WeatherOnTheRunways}</button>
           <button
             onClick={getWeather}
             className="btn dropdown-toggle-split"
@@ -63,7 +62,7 @@ function Home() {
           </div>
         </div>
         <div className="btn-group dropright usefulLinks">
-          <button type="button" className="btn">
+          <button type="button" className="btn btn-Links">
             {usefulLinks}
           </button>
           <button
@@ -80,7 +79,7 @@ function Home() {
         </div>
         <div className="btn-group dropright notami">
           <button type="button" className="btn">
-            ნოტამი
+            {Notami}
           </button>
           <button
             className="btn dropdown-toggle-split"
@@ -91,7 +90,16 @@ function Home() {
             <FontAwesomeIcon icon={faShare} />
           </button>
           <div className="dropdown-menu">
-            <Notami />
+            <div className="list-group list_content">
+              <a
+                href="http://gcaa.ge/geo/"
+                rel="noopener noreferrer"
+                target="_blank"
+                className="list-group-item list-group-item-action"
+              >
+                {NotamiAgency}
+              </a>
+            </div>
           </div>
         </div>
       </div>

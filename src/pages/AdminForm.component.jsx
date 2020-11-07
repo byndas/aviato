@@ -15,7 +15,9 @@ class AdminForm extends Component {
       id: null,
       name: "",
       title: "",
-      text: ""
+      textGeo: "",
+      textEng: "",
+      textRus: ""
     };
 
     this.clearState = this.clearState.bind(this);
@@ -29,7 +31,9 @@ class AdminForm extends Component {
     id: null,
     name: "",
     title: "",
-    text: ""
+    textGeo: "",
+    textEng: "",
+    textRus: ""
   };
   componentWillReceiveProps(nextProps) {
     console.log("EDIT OBJ", nextProps.editObj);
@@ -41,7 +45,9 @@ class AdminForm extends Component {
         nextPropsEditObj.id !== this.state.id ||
         nextPropsEditObj.name !== this.state.name ||
         nextPropsEditObj.title !== this.state.title ||
-        nextPropsEditObj.text !== this.state.text ||
+        nextPropsEditObj.textGeo !== this.state.textGeo ||
+        nextPropsEditObj.textEng !== this.state.textEng ||
+        nextPropsEditObj.textRus !== this.state.textRus ||
         nextPropsEditObj.src !== this.state.src
       ) {
         // merges objToEdit into current state
@@ -78,13 +84,15 @@ class AdminForm extends Component {
 
     if (this.state === this.emptyState) return;
 
-    const { src, name, title, text } = this.state;
+    const { src, name, title, textGeo, textEng, textRus } = this.state;
     const { pageName } = this.props;
     const postObj = {
       src,
       name,
       title,
-      text
+      textGeo,
+      textEng,
+      textRus
     };
     // IF NEW POST
     if (this.state.id === null) {
@@ -107,7 +115,7 @@ class AdminForm extends Component {
     }
   }
   render() {
-    const { name, title, text } = this.state;
+    const { name, title, textGeo, textEng, textRus } = this.state;
     const { pageName } = this.props;
     return (
       <div style={{ width: "50%", marginBottom: "50px" }} className="container">
@@ -143,16 +151,35 @@ class AdminForm extends Component {
           <div className="form-group">
             <label htmlFor="text">Text</label>
             <textarea
-              value={text}
-              name="text"
+              value={textGeo}
+              name="textGeo"
               rows="3"
               onChange={this.handleChange}
               className="form-control"
               id="text"
+              placeholder="Georgian text"
+            ></textarea>
+            <textarea
+              value={textEng}
+              name="textEng"
+              rows="3"
+              onChange={this.handleChange}
+              className="form-control"
+              id="text"
+              placeholder="English text"
+            ></textarea>
+            <textarea
+              value={textRus}
+              name="textRus"
+              rows="3"
+              onChange={this.handleChange}
+              className="form-control"
+              id="text"
+              placeholder="Russian text"
             ></textarea>
           </div>
           <div className="form-group">
-            <label htmlFor="img">image</label>
+            <label htmlFor="img">Image</label>
             <input
               onChange={this.newImage}
               className="form-control-file"

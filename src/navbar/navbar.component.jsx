@@ -232,7 +232,7 @@ class Navbar extends React.Component {
               value={language}
               onChange={handleChange}
             >
-              <option value="Geo">Geo</option>
+              <option value="Geo"> Geo</option>
               <option value="Eng">Eng</option>
               <option value="Rus">Rus</option>
             </select>

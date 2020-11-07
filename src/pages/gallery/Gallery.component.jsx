@@ -12,7 +12,6 @@ class Gallery extends Component {
     super(props);
     // state controls form inputs
     this.state = null;
-
     this.editPostInputs = this.editPostInputs.bind(this);
   }
 
@@ -34,7 +33,9 @@ class Gallery extends Component {
         .map((item, index) => (
           <PagePosts
             src={item.src}
-            text={item.text}
+            textGeo={item.textGeo}
+            textEng={item.textEng}
+            textRus={item.textRus}
             auth={auth}
             editPostInputs={this.editPostInputs}
             key={index}

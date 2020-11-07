@@ -111,10 +111,19 @@
   z-index: 200000;
 }
 
+.btn-Runways {
+  width: 16.5rem;
+}
+
+.btn-Links {
+  width: 13rem;
+}
+
 @media (min-width: 320px){
   .runways {
     margin-top: 6rem;
     margin-left: .7rem;
+  
   }
   .usefulLinks {
     margin-left: 2.5rem;
@@ -126,7 +135,6 @@
 
 @media (min-width: 360px){
   .runways {
-  
     margin-left: 2.2rem;
   }
   .usefulLinks {
@@ -134,5 +142,17 @@
   }
   .notami {
     margin-left: 7.5rem;
+  }
+}
+
+@media (min-width: 411px){
+  .runways {
+    margin-left: 3.5rem;
+  }
+  .usefulLinks {
+    margin-left: 5.5rem;
+  }
+  .notami {
+    margin-left: 9.5rem;
   }
 }
