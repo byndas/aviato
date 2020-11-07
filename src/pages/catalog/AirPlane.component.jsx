@@ -19,13 +19,15 @@ class AirPlane extends Component {
 
       planeList = planeArr
         .reverse()
-        .map((airplane, index) => (
+        .map((item, index) => (
           <PagePosts
             auth={auth}
             editPostInputs={editPostInputs}
-            name={airplane.name}
-            text={airplane.text}
-            src={airplane.src}
+            name={item.name}
+            textGeo={item.textGeo}
+            textEng={item.textEng}
+            textRus={item.textRus}
+            src={item.src}
             id={planeIds[index]}
             key={index}
             pageName="catalog"

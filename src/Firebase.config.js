@@ -106,8 +106,6 @@ export const putImageFireStorage = (pageName, state, postObj) => {
 //------------------------------------------------------
 //------------------------------------------------------
 export const deleteImageFireStorage = src => {
-  console.log("999999 SRC", src);
-
   const after2F = src.split("%2F")[1];
 
   const imageId = after2F.split("?")[0];
@@ -162,16 +160,4 @@ export const pushOrSetPostFireDB = (pageName, state, postObj) => {
         deleteImageFireStorage(state.src);
       }
     });
-};
-//------------------------------------------------------
-//------------------------------------------------------
-//------------------------------------------------------
-//------------------------------------------------------
-export const getFireDbPage = (pageName, dispatchAction) => {
-  // LISTENER: UPDATES REDUX when Fire DB page changes
-
-  fireDbRef.child(pageName).on("value", snapshot => {
-    console.log("FIRE DB PAGE SNAPSHOT:", snapshot.val());
-    dispatchAction(snapshot.val());
-  });
 };

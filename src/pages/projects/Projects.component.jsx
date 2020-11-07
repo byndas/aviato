@@ -36,7 +36,9 @@ function Projects({ auth, reduxProjects }) {
         editPostInputs={editPostInputs}
         name={item.name}
         title={item.title}
-        text={item.text}
+        textGeo={item.textGeo}
+        textEng={item.textEng}
+        textRus={item.textRus}
         src={item.src}
         key={index}
         id={projectsIds[index]}

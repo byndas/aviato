@@ -1,5 +1,5 @@
-import { useState } from "react";
-import axios from "axios";
+import { useState } from "../../../node_modules/react";
+import axios from "../../../node_modules/axios";
 
 const API_Key = "3c7b076b3faa858080569f619e9e3da5";
 
