@@ -26,6 +26,10 @@ class App extends React.Component {
       searchInput: ""
     };
     this.setSearchInput = this.setSearchInput.bind(this);
+    this.onFireDbChange = this.onFireDbChange.bind(this);
+  }
+  onFireDbChange(snapshot) {
+    this.props.updateReduxWithFireDb(snapshot.val());
   }
   componentDidMount() {
     fireAuth.onAuthStateChanged(user => {
@@ -35,9 +39,10 @@ class App extends React.Component {
         this.setState({ auth: false });
       }
     });
-    fireDbRef.on("value", snapshot => {
-      this.props.updateReduxWithFireDb(snapshot.val());
-    });
+    fireDbRef.on("value", this.onFireDbChange);
+  }
+  componentWillUnmount() {
+    fireDbRef.off("value", this.onFireDbChange);
   }
   setSearchInput(event) {
     this.setState({
@@ -74,24 +79,14 @@ class App extends React.Component {
             <Route
               exact
               path="/catalog"
-              render={() => (
-                <Catalog auth={auth} reduxStore={this.props.reduxStore} />
-              )}
+              render={() => <Catalog auth={auth} />}
             />
             <Route
               exact
               path="/gallery"
-              render={() => (
-                <Gallery auth={auth} reduxStore={this.props.reduxStore} />
-              )}
+              render={() => <Gallery auth={auth} />}
             />
-            <Route
-              exact
-              path="/news"
-              render={() => (
-                <News auth={auth} reduxStore={this.props.reduxStore} />
-              )}
-            />
+            <Route exact path="/news" render={() => <News auth={auth} />} />
             <Route
               exact
               path="/projects"
