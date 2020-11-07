@@ -106,6 +106,7 @@ export const putImageFireStorage = (pageName, state, postObj) => {
 //------------------------------------------------------
 //------------------------------------------------------
 export const deleteImageFireStorage = src => {
+
   const after2F = src.split("%2F")[1];
 
   const imageId = after2F.split("?")[0];
