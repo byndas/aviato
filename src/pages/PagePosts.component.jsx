@@ -4,10 +4,7 @@ import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { LanguageContext } from "../context/LanguageContext";
 import translate from "../language/translate";
-import {
-  deleteImageFireStorage,
-  removePostFireDB
-} from "../firebase/Firebase.config";
+import { deleteImageFireStorage, removePostFireDB } from "../Firebase.config";
 
 class PagePosts extends Component {
   static contextType = LanguageContext;
@@ -18,7 +15,7 @@ class PagePosts extends Component {
     this.handleDelete = this.handleDelete.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
-  handleEdit(id, src, text, title, name) {
+  handleEdit(id, src, textGeo, textEng, textRus, title, name) {
     // scrolls up to Form
     window.scrollTo(0, 0);
     // populates sibling Form.jsx state (via parent component)
@@ -26,7 +23,9 @@ class PagePosts extends Component {
     const editObj = {
       id,
       src,
-      text,
+      textGeo,
+      textEng,
+      textRus,
       title,
       name
     };
@@ -53,7 +52,17 @@ class PagePosts extends Component {
     const { expanded } = this.state;
     const { language } = this.context;
     const { ReadMore } = translate[language];
-    const { auth, id, src, text, title, name, pageName } = this.props;
+    const {
+      auth,
+      id,
+      src,
+      textGeo,
+      textEng,
+      textRus,
+      title,
+      name,
+      pageName
+    } = this.props;
 
     switch (pageName) {
       case "projects":
@@ -67,7 +76,15 @@ class PagePosts extends Component {
                     <FontAwesomeIcon
                       type="button"
                       onClick={() => {
-                        this.handleEdit(id, src, text, title, name);
+                        this.handleEdit(
+                          id,
+                          src,
+                          textGeo,
+                          textEng,
+                          textRus,
+                          title,
+                          name
+                        );
                       }}
                       className="icons"
                       icon={faEdit}
@@ -96,7 +113,9 @@ class PagePosts extends Component {
                         : "card-text text-truncate"
                     }
                   >
-                    {text}
+                    {textGeo}
+                    {textEng}
+                    {textRus}
                   </p>
                   <button
                     onClick={this.handleClick}
@@ -120,7 +139,9 @@ class PagePosts extends Component {
                 style={{ backgroundColor: "blue", color: "white" }}
                 className="container col-md-8 text-center mt-3 rounded p-3"
               >
-                {text}
+                {textGeo}
+                {textEng}
+                {textRus}
               </div>
             </div>
           </div>
@@ -135,7 +156,15 @@ class PagePosts extends Component {
                   <FontAwesomeIcon
                     type="button"
                     onClick={() => {
-                      this.handleEdit(id, src, text, title, name);
+                      this.handleEdit(
+                        id,
+                        src,
+                        textGeo,
+                        textEng,
+                        textRus,
+                        title,
+                        name
+                      );
                     }}
                     icon={faEdit}
                   />
@@ -154,7 +183,11 @@ class PagePosts extends Component {
                 alt={name}
               />
               <h5 className="text-center p-3">{title}</h5>
-              <p className="text-center news-text">{text}</p>
+              <p className="text-center news-text">
+                {textGeo}
+                {textEng}
+                {textRus}
+              </p>
             </div>
           </div>
         );
@@ -177,7 +210,9 @@ class PagePosts extends Component {
                         : "card-text text-truncate"
                     }
                   >
-                    {text}
+                    {textGeo}
+                    {textEng}
+                    {textRus}
                   </p>
                   <button
                     onClick={this.handleClick}
@@ -195,7 +230,15 @@ class PagePosts extends Component {
                       <FontAwesomeIcon
                         type="button"
                         onClick={() => {
-                          this.handleEdit(id, src, text, title, name);
+                          this.handleEdit(
+                            id,
+                            src,
+                            textGeo,
+                            textEng,
+                            textRus,
+                            title,
+                            name
+                          );
                         }}
                         className="icons"
                         icon={faEdit}
@@ -213,7 +256,11 @@ class PagePosts extends Component {
                 </div>
                 <div className="collapse" id={id}>
                   <div className="card-body">
-                    <p className="card-text">{text}</p>
+                    <p className="card-text">
+                      {textGeo}
+                      {textEng}
+                      {textRus}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -227,14 +274,16 @@ class PagePosts extends Component {
               <img src={src} className="gallery_img" alt="..." />
               <div id="flex" className="carousel-caption">
                 <p className="gallery_text font-italic text-center">
-                  {text}
+                  {textGeo}
+                  {textEng}
+                  {textRus}
                   {auth && (
                     <div>
                       <FontAwesomeIcon
                         style={{ color: "blue" }}
                         type="button"
                         onClick={() => {
-                          this.handleEdit(id, src, text);
+                          this.handleEdit(id, src, textGeo, textEng, textRus);
                         }}
                         className="icons"
                         icon={faEdit}
