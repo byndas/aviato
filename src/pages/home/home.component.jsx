@@ -11,9 +11,7 @@ import translate from "../../language/translate";
 
 function Home() {
   const { language } = useContext(LanguageContext);
-  const { WeatherOnTheRunways, usefulLinks, Notami, NotamiAgency } = translate[
-    language
-  ];
+  const { WeatherOnTheRunways, usefulLinks, Notami, NotamiAgency } = translate[language];
   const [tbilisi, setTbilisi] = useWeatherState({});
   const [batumi, setBatumi] = useWeatherState({});
   const [kutaisi, setKutaisi] = useWeatherState({});

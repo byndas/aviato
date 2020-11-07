@@ -1,16 +1,18 @@
 import React from "react";
+import { LanguageContext } from '../context/LanguageContext'
 import { connect } from "react-redux";
 
 class SearchResults extends React.Component {
+  static contextType = LanguageContext;
   constructor(props) {
     super(props);
     this.pageSearch = this.pageSearch.bind(this);
   }
-  pageSearch(reduxState, searchInput, finalResultArr) {
+  pageSearch(reduxState, searchInput, finalResultArr, language) {
     if (reduxState !== null) {
       if (typeof reduxState !== "undefined") {
         if (finalResultArr.length < 20) {
-          console.log("REDUX STORE", reduxState);
+        
           const pageMatches = [];
           const pageIds = Object.keys(reduxState);
           const pageValues = Object.values(reduxState);
@@ -44,22 +46,18 @@ class SearchResults extends React.Component {
             }
           }
           let pageMatchDivArray = pageMatches.map((item, index) => (
-            <div
-              className="container text-center mt-5 border-bottom"
+            <div className="container text-center mt-5 border-bottom"
               id={pageIds[index]}
-              key={pageIds[index]}
-            >
+              key={pageIds[index]} >
               <img className="img-thumbnail" src={item.src} alt={item.name} />
-              <h2>{item.name}</h2>
-              <p>{item.title}</p>
+              <h2><strong>{item.name}</strong></h2>
+              <p><strong>{item.title}</strong></p>
               <p className="rounded p-3">
-                {item.textGeo}
-                {item.textEng}
-                {item.textRus}
+                {language === 'Geo' ? item.textGeo : language === 'Eng' ? item.textEng : language === 'Rus' ? item.textRus : 'not found'}
               </p>
             </div>
           ));
-          console.log("pageMatchDivArray", pageMatchDivArray);
+        
           finalResultArr.push(...pageMatchDivArray);
         }
       }
@@ -67,23 +65,24 @@ class SearchResults extends React.Component {
   }
   render() {
     const { entireRedux, searchInput } = this.props;
+    const { language } = this.context;
     const finalSearchResults = [];
 
     if (entireRedux !== null) {
       if (searchInput.trim().length) {
-        this.pageSearch(entireRedux.news, searchInput, finalSearchResults);
-        this.pageSearch(entireRedux.gallery, searchInput, finalSearchResults);
-        this.pageSearch(entireRedux.projects, searchInput, finalSearchResults);
-        this.pageSearch(entireRedux.catalog, searchInput, finalSearchResults);
+        this.pageSearch(entireRedux.news, searchInput, finalSearchResults, language);
+        this.pageSearch(entireRedux.gallery, searchInput, finalSearchResults, language);
+        this.pageSearch(entireRedux.projects, searchInput, finalSearchResults, language);
+        this.pageSearch(entireRedux.catalog, searchInput, finalSearchResults, language);
         if (!finalSearchResults.length) {
           finalSearchResults.push("NO SEARCH RESULTS");
         }
       } else {
         finalSearchResults.push("NO SEARCH RESULTS");
       }
-      console.log("FINAL SEARCH RESULT", finalSearchResults);
+  
     }
-    return <div id="container">{finalSearchResults}</div>;
+    return <div className="container">{finalSearchResults}</div>;
   }
 }
 const mapStateToProps = reduxState => ({

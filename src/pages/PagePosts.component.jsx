@@ -29,18 +29,18 @@ class PagePosts extends Component {
       title,
       name
     };
-    console.log("PagePosts editObj", editObj);
+  
     this.props.editPostInputs(editObj);
   }
   handleDelete(id, src, pageName) {
-    console.log("POST FIRE DB ID TO DELETE: ", id);
+
 
     if (src !== null) {
-      console.log("DELETING IMAGE FROM FIRE STORAGE", src);
+
       // DELETES IMAGE FROM FIREBASE STORAGE
       deleteImageFireStorage(src);
     }
-    console.log("REMOVING POST FROM FIRE DB");
+
     // REMOVES POST FROM FIREBASE DB
     removePostFireDB(pageName, id);
   }
@@ -52,17 +52,7 @@ class PagePosts extends Component {
     const { expanded } = this.state;
     const { language } = this.context;
     const { ReadMore } = translate[language];
-    const {
-      auth,
-      id,
-      src,
-      textGeo,
-      textEng,
-      textRus,
-      title,
-      name,
-      pageName
-    } = this.props;
+    const { auth, id, src, textGeo, textEng, textRus,title,name,pageName } = this.props;
 
     switch (pageName) {
       case "projects":
@@ -106,16 +96,8 @@ class PagePosts extends Component {
                   <img src={src} alt="..." className="img-thumbnail" />
                 </div>
                 <div className="col-md-8">
-                  <p
-                    className={
-                      !expanded
-                        ? "fade text-truncate"
-                        : "card-text text-truncate"
-                    }
-                  >
-                    {textGeo}
-                    {textEng}
-                    {textRus}
+                  <p className={ !expanded   ? "fade text-truncate" : "card-text text-truncate" }>
+                  {language === 'Geo' ? textGeo : language === 'Eng' ? textEng : language === 'Rus' ? textRus : ''}
                   </p>
                   <button
                     onClick={this.handleClick}
@@ -124,8 +106,7 @@ class PagePosts extends Component {
                     data-toggle="collapse"
                     data-target={`#${id}`}
                     aria-expanded="false"
-                    aria-controls="collapseExample"
-                  >
+                    aria-controls="collapseExample">
                     {ReadMore}
                   </button>
                 </div>
@@ -135,13 +116,9 @@ class PagePosts extends Component {
               <div className="container col-md-6">
                 <img src={src} className="mt-5 img-thumbnail" alt="..." />
               </div>
-              <div
-                style={{ backgroundColor: "blue", color: "white" }}
-                className="container col-md-8 text-center mt-3 rounded p-3"
-              >
-                {textGeo}
-                {textEng}
-                {textRus}
+              <div style={{ backgroundColor: "blue", color: "white" }}
+                 className="container col-md-8 text-center mt-3 rounded p-3" >
+                {language === 'Geo' ? textGeo : language === 'Eng' ? textEng : language === 'Rus' ? textRus : ''}
               </div>
             </div>
           </div>
@@ -183,10 +160,8 @@ class PagePosts extends Component {
                 alt={name}
               />
               <h5 className="text-center p-3">{title}</h5>
-              <p className="text-center news-text">
-                {textGeo}
-                {textEng}
-                {textRus}
+              <p className="text-center news-text font-weight-bold">
+                {language === 'Geo' ? textGeo : language === 'Eng' ? textEng : language === 'Rus' ? textRus : ''} 
               </p>
             </div>
           </div>
@@ -203,16 +178,8 @@ class PagePosts extends Component {
                 />
                 <div className="card-body">
                   <h5 className="card-title">{name}</h5>
-                  <p
-                    className={
-                      !expanded
-                        ? "fade text-truncate"
-                        : "card-text text-truncate"
-                    }
-                  >
-                    {textGeo}
-                    {textEng}
-                    {textRus}
+                  <p className={!expanded ? "fade text-truncate" : "card-text text-truncate"} >
+                  {language === 'Geo' ? textGeo : language === 'Eng' ? textEng : language === 'Rus' ? textRus : ''}
                   </p>
                   <button
                     onClick={this.handleClick}
@@ -257,9 +224,7 @@ class PagePosts extends Component {
                 <div className="collapse" id={id}>
                   <div className="card-body">
                     <p className="card-text">
-                      {textGeo}
-                      {textEng}
-                      {textRus}
+                    {language === 'Geo' ? textGeo : language === 'Eng' ? textEng : language === 'Rus' ? textRus : ''}
                     </p>
                   </div>
                 </div>
@@ -269,14 +234,12 @@ class PagePosts extends Component {
         );
       case "gallery":
         return (
-          <div>
+         
             <div className="carousel-item mt-5 mb-5 rounded">
               <img src={src} className="gallery_img" alt="..." />
               <div id="flex" className="carousel-caption">
                 <p className="gallery_text font-italic text-center">
-                  {textGeo}
-                  {textEng}
-                  {textRus}
+                {language === 'Geo' ? textGeo : language === 'Eng' ? textEng : language === 'Rus' ? textRus : ''}
                   {auth && (
                     <div>
                       <FontAwesomeIcon
@@ -302,7 +265,7 @@ class PagePosts extends Component {
                 </p>
               </div>
             </div>
-          </div>
+        
         );
       default:
         return;
@@ -311,3 +274,4 @@ class PagePosts extends Component {
 }
 
 export default PagePosts;
+
