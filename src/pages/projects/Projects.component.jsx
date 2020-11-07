@@ -13,7 +13,7 @@ function Projects({ auth, reduxProjects }) {
   const { Projects } = translate[language];
   const [state, setState] = useState(null);
   const [currPage, setCurrPage] = useState(1);
-  const [projectsPerPage] = useState(4);
+  const [projectsPerPage] = useState(3);
   const indexOfLastProject = currPage * projectsPerPage;
   const indexOfFirstProject = indexOfLastProject - projectsPerPage;
   const paginate = pageNumber => setCurrPage(pageNumber);
