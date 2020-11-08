@@ -21,9 +21,7 @@ class Login extends React.Component {
       .catch(error => {
         const errorCode = error.code;
         if (errorCode === "auth/user-disabled") {
-          console.log({ eError: "User is disabled", pError: "" });
         } else if (errorCode === "auth/user-not-found") {
-          console.log({ eError: "User not found", pError: "" });
         } else if (errorCode === "auth/wrong-password") {
           alert("Wrong password");
         }
