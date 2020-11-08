@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
 import "./Home.styles.css";
+import React, { useContext } from "react";
 import useWeatherState from "./useWeatherState";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Runways from "./Runways.component";

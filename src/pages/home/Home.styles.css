@@ -1,4 +1,4 @@
-.slideshow {
+/* .slideshow {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -163,4 +163,8 @@
   .weather {
     margin-top: 0;
   }
-}
+} */
+
+.slideshow{position:fixed;width:100%;height:100%;top:80px;left:0;z-index:-1;margin:0;padding:0}.slideshow li{list-style:none;width:100%;height:100%;position:absolute;top:18px;left:0;background-size:cover;background-position:center center;background-repeat:no-repeat;background-attachment:local;opacity:0;z-index:-1;animation:imageAnimation 25s linear infinite}.slideshow li:nth-child(1){background-image:url(../../images/jpg/landings/landing01.jpg)}.slideshow li:nth-child(2){background-image:url(../../images/jpg/landings/landing02.jpg);animation-delay:5s}.slideshow li:nth-child(3){background-image:url(../../images/jpg/landings/landing03.jpg);animation-delay:10s}.slideshow li:nth-child(4){background-image:url(../../images/jpg/landings/landing04.jpg);animation-delay:15s}.slideshow li:nth-child(5){background-image:url(../../images/jpg/landings/landing05.jpg);animation-delay:20s}@keyframes imageAnimation{0%{opacity:0;animation-timing-function:ease-in}10%{opacity:1;animation-timing-function:ease-out}20%{opacity:1}30%{opacity:0}}.runways{margin-top:10rem;margin-left:5rem;display:block}.runways button{background-color:rgba(255,255,255,.5);transition:all .3s ease-in-out}.runways button:hover{background-color:rgba(255,255,255,.8)}.usefulLinks{margin-top:.5rem;margin-left:5rem;display:block}.notami{margin-top:.5rem;margin-left:5rem;display:block}.notami button{background-color:rgba(255,255,255,.5);transition:all .3s ease-in-out}.notami button:hover{background-color:rgba(255,255,255,.8)}.usefulLinks button{background-color:rgba(255,255,255,.5);transition:all .3s ease-in-out}.usefulLinks button:hover{background-color:rgba(255,255,255,.8)}.list_content{z-index:200000}.btn-Runways{width:16.5rem}.btn-Links{width:13rem}@media (min-width:320px){.runways{margin-top:6rem;margin-left:.7rem}.usefulLinks{margin-left:2.5rem}.notami{margin-left:6rem}.weather{margin-top:6rem}}@media (min-width:360px){.runways{margin-left:2.2rem}.usefulLinks{margin-left:4rem}.notami{margin-left:7.5rem}}@media (min-width:411px){.runways{margin-left:3.5rem}.usefulLinks{margin-left:5.5rem}.notami{margin-left:9.5rem}}@media (min-width:992px){.weather{margin-top:0}}
+
+

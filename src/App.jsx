@@ -1,4 +1,5 @@
 import React from "react";
+import Home from "./pages/home/home.component";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { fireAuth, fireDbRef } from "./Firebase.config";
@@ -6,7 +7,6 @@ import { updateReduxWithFireDb } from "./redux/site/site.actions";
 import { LanguageProvider } from "./context/LanguageContext";
 
 import Navbar from "./navbar/navbar.component";
-import Home from "./pages/home/home.component";
 import About from "./pages/about/about.component";
 import Catalog from "./pages/catalog/Catalog.component";
 import Contact from "./pages/contact/Contact.component";
