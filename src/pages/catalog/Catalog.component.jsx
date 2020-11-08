@@ -19,7 +19,6 @@ class Catalog extends Component {
   }
   editPostInputs(postObj) {
     this.setState(postObj);
-    console.log("Catalog.component STATE", this.state);
   }
   render() {
     const { auth, reduxCatalog } = this.props;

@@ -17,7 +17,6 @@ class Gallery extends Component {
 
   editPostInputs(postObj) {
     this.setState(postObj);
-    console.log("Gallery.component STATE", this.state);
   }
   render() {
     const { auth, reduxGallery } = this.props;

@@ -68,10 +68,6 @@ export const putImageFireStorage = (pageName, state, postObj) => {
   };
 
   const imageId = randomImageId();
-
-  console.log("imageId", imageId);
-  console.log("imgFile", state.imgFile);
-
   const putImage = storageRef(imageId).put(state.imgFile);
 
   putImage.on("state_changed", snapshot => {
@@ -82,10 +78,7 @@ export const putImageFireStorage = (pageName, state, postObj) => {
 
   putImage
     .then(snapshot => {
-      console.log("IMAGE SNAPSHOT IN FIRE STORAGE", snapshot);
-
       const imagePath = snapshot.metadata.fullPath.split("/")[1];
-      console.log("IMAGE PATH:", imagePath);
 
       const fireStorageUrl =
         "https://firebasestorage.googleapis.com/v0/b/aviator-db.appspot.com/o/images%2F" +
@@ -94,7 +87,6 @@ export const putImageFireStorage = (pageName, state, postObj) => {
 
       postObj.src = fireStorageUrl;
 
-      console.log("PUSHING NEW POST OBJ INTO FIRE DB", postObj);
       pushOrSetPostFireDB(pageName, state, postObj);
     })
     .catch(error => {
@@ -115,7 +107,7 @@ export const deleteImageFireStorage = src => {
 
   deleteImage
     .then(() => {
-      console.log("IMAGE DELETED FROM FIRE STORAGE", imageId);
+  
     })
     .catch(error => {
       console.log("FAILED TO DELETE IMAGE FROM FIRE STORAGE", error.message);
@@ -126,7 +118,6 @@ export const deleteImageFireStorage = src => {
 //------------------------------------------------------
 //------------------------------------------------------
 export const pushOrSetPostFireDB = (pageName, state, postObj) => {
-  console.log("POST OBJ, STATE", postObj, state);
 
   const pageFireDbRef = fireDbRef.child(pageName);
 
@@ -136,28 +127,20 @@ export const pushOrSetPostFireDB = (pageName, state, postObj) => {
   // IF EDIT POST
   if (postId !== null) {
     pushOrSet = pageFireDbRef.child(postId).set(postObj);
-    console.log("UPDATED POST IN FIRE DB", postObj);
   } else {
     // SINCE CREATING A POST
     pushOrSet = pageFireDbRef.push(postObj);
-    console.log("CREATED POST IN FIRE DB", postObj);
   }
 
   pushOrSet
     .then(() => {
-      console.log("POST OBJ", postObj);
       document.getElementById("clearBtn").click();
-      console.log("STATE & FORM CLEARED");
     })
     .catch(err => {
       // Firebase DB fails to save post
       console.log("FAILED TO UPDATE POST IN FIRE DB", err.message);
 
       if (state.src !== null) {
-        console.log(
-          "DELETING IMAGE FROM FIRE STORAGE DUE TO FAILED DB POST",
-          state.src
-        );
         deleteImageFireStorage(state.src);
       }
     });

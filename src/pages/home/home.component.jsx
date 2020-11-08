@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
 import "./Home.styles.css";
+import React, { useContext } from "react";
 import useWeatherState from "./useWeatherState";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Runways from "./Runways.component";
@@ -37,38 +37,44 @@ function Home() {
         <li></li>
       </ul>
       <div className="links">
-        <div className="btn-group dropright runways show">
-          <button className="btn btn-Runways">{WeatherOnTheRunways}</button>
-          <button
-            onClick={getWeather}
+        <div className="btn-group dropdown runways show">
+          <button className="btn btn-Runways" 
+            type='button'
+            onClick={getWeather} 
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="true" >{WeatherOnTheRunways}</button>
+          <button onClick={getWeather}
             className="btn dropdown-toggle-split"
             data-toggle="dropdown"
             aria-haspopup="true"
-            aria-expanded="true"
-          >
+            aria-expanded="true" >
             <FontAwesomeIcon icon={faPlaneDeparture} />
           </button>
-          <div className="dropdown-menu">
+          <div className="dropdown-menu weather">
             <Runways
               tbilisi={tbilisi}
               batumi={batumi}
               kutaisi={kutaisi}
               ambrolauri={ambrolauri}
               mestia={mestia}
-              telavi={telavi}
-            />
+              telavi={telavi} />
           </div>
         </div>
         <div className="btn-group dropright usefulLinks">
-          <button type="button" className="btn btn-Links">
+          <button 
+           type="button" 
+           className="btn btn-Links"
+           data-toggle="dropdown"
+           aria-haspopup="true"
+           aria-expanded="false">
             {usefulLinks}
           </button>
           <button
             className="btn dropdown-toggle-split"
             data-toggle="dropdown"
             aria-haspopup="true"
-            aria-expanded="false"
-          >
+            aria-expanded="false" >
             <FontAwesomeIcon icon={faShare} />
           </button>
           <div className="dropdown-menu">
@@ -76,15 +82,19 @@ function Home() {
           </div>
         </div>
         <div className="btn-group dropright notami">
-          <button type="button" className="btn">
+          <button 
+           type="button" 
+           className="btn"
+           data-toggle="dropdown"
+           aria-haspopup="true"
+           aria-expanded="false">
             {Notami}
           </button>
           <button
             className="btn dropdown-toggle-split"
             data-toggle="dropdown"
             aria-haspopup="true"
-            aria-expanded="false"
-          >
+            aria-expanded="false">
             <FontAwesomeIcon icon={faShare} />
           </button>
           <div className="dropdown-menu">
