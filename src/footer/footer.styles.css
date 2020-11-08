@@ -33,7 +33,7 @@
 }
 
 .about {
-  font-size: 1.2rem;
+  font-size: .9rem;
   color: #007bff;
 }
 
@@ -46,6 +46,7 @@
   color: transparent;
   letter-spacing: 0.2rem;
   transition: all 0.3s;
+  background-clip: text;
   -webkit-background-clip: text;
   font-weight: 500;
 }

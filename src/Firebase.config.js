@@ -68,7 +68,6 @@ export const putImageFireStorage = (pageName, state, postObj) => {
   };
 
   const imageId = randomImageId();
-
   const putImage = storageRef(imageId).put(state.imgFile);
 
   putImage.on("state_changed", snapshot => {

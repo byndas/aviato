@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useContext } from "react";
 import "./footer.styles.css";
 import youtube from "../images/svg/youtube.svg";
 import instagramIcon from "../images/svg/instagramIcon.svg";
@@ -8,10 +8,8 @@ import { Link } from "react-router-dom";
 import translate from "../language/translate";
 import { LanguageContext } from "../context/LanguageContext";
 
-class Footer extends Component {
-  static contextType = LanguageContext;
-  render() {
-    const { language } = this.context;
+function Footer (){
+    const { language } = useContext(LanguageContext);
     const { News, Home, AboutUs, Projects, Gallery, Catalog, Contact, Abouttext} = translate[language];
     return (
       <div className="footer-dark">
@@ -70,7 +68,7 @@ class Footer extends Component {
                     }}
                     src={logo} />
                 </p>
-                <p className="about">{Abouttext}</p>
+                <p className="about text-center">{Abouttext}</p>
               </div>
               <div className="col item d-flex justify-content-center">
                 <a className="nav-link" href="https://www.youtube.com/">
@@ -101,6 +99,6 @@ class Footer extends Component {
       </div>
     );
   }
-}
+
 
 export default Footer;
