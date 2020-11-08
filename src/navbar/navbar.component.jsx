@@ -227,12 +227,8 @@ class Navbar extends React.Component {
                 LOG OUT
               </div>
             )}
-            <select
-              className="language"
-              value={language}
-              onChange={handleChange}
-            >
-              <option value="Geo"> Geo</option>
+            <select className="language" value={language} onChange={handleChange} >
+              <option value="Geo">Geo</option>
               <option value="Eng">Eng</option>
               <option value="Rus">Rus</option>
             </select>

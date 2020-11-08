@@ -12,17 +12,7 @@ class Footer extends Component {
   static contextType = LanguageContext;
   render() {
     const { language } = this.context;
-    const {
-      News,
-      Home,
-      AboutUs,
-      Projects,
-      Gallery,
-      Catalog,
-      Calendar,
-      Contact,
-      Abouttext
-    } = translate[language];
+    const { News, Home, AboutUs, Projects, Gallery, Catalog, Contact, Abouttext} = translate[language];
     return (
       <div className="footer-dark">
         <footer>
@@ -65,11 +55,6 @@ class Footer extends Component {
                     </Link>
                   </li>
                   <li>
-                    <Link className="nav-link" to="/calendar">
-                      {Calendar} <span className="sr-only">(current)</span>
-                    </Link>
-                  </li>
-                  <li>
                     <Link className="nav-link" to="/contact">
                       {Contact} <span className="sr-only">(current)</span>
                     </Link>
@@ -79,15 +64,11 @@ class Footer extends Component {
               <div className="col-md-6 item-text mt-n4">
                 <p className="heading-secondary">
                   1*209{" "}
-                  <img
-                    alt="logo"
-                    style={{
-                      width: "25px",
+                  <img alt="logo" style={{ width: "25px",
                       height: "25px",
                       marginBottom: "6px"
                     }}
-                    src={logo}
-                  />
+                    src={logo} />
                 </p>
                 <p className="about">{Abouttext}</p>
               </div>

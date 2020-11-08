@@ -123,13 +123,15 @@
   .runways {
     margin-top: 6rem;
     margin-left: .7rem;
-  
   }
   .usefulLinks {
     margin-left: 2.5rem;
   }
   .notami {
     margin-left: 6rem;
+  }
+  .weather {
+    margin-top: 6rem;
   }
 }
 
@@ -154,5 +156,11 @@
   }
   .notami {
     margin-left: 9.5rem;
+  }
+}
+
+@media (min-width: 992px){
+  .weather {
+    margin-top: 0;
   }
 }

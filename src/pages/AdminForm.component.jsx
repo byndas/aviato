@@ -67,7 +67,6 @@ class AdminForm extends Component {
 
     let reader = new FileReader();
     let file = e.target.files[0];
-    console.log("NEW IMAGE", file);
 
     reader.onloadend = () => {
       this.setState({ imgFile: file });
