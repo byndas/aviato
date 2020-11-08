@@ -8,7 +8,7 @@ function useWeatherState() {
   const getWeather = city => {
     const fetchData = async () => {
       const res = await axios.get(
-        `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_Key}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_Key}`
       );
       console.log(res.data)
       setState({
