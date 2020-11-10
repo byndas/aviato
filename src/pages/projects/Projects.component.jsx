@@ -49,7 +49,7 @@ function Projects({ auth, reduxProjects }) {
   return (
     <div>
       <div className="project_container">
-        <h1 className="project_title font-italic p-5">{Projects}</h1>
+        <h1 className="project_title p-5">{Projects}</h1>
         {auth && (
           <div className="container project_form">
             <button
@@ -64,11 +64,7 @@ function Projects({ auth, reduxProjects }) {
               <div className="modal-dialog modal-md">
                 <div className="modal-content">
                   <AdminForm editObj={state} pageName="projects" />
-                  <button
-                    type="button"
-                    className="btn btn-default"
-                    data-dismiss="modal"
-                  >
+                  <button type="button" className="btn btn-default" data-dismiss="modal" >
                     Close
                   </button>
                 </div>

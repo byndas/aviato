@@ -111,7 +111,7 @@ class AdminForm extends Component {
     const { name, title, textGeo, textEng, textRus } = this.state;
     const { pageName } = this.props;
     return (
-      <div style={{ width: "50%", marginBottom: "50px" }} className="container">
+      <div className="container">
         <form onSubmit={this.handleSubmit} id="form">
           {pageName !== "gallery" && (
             <div className="form-group">
@@ -187,8 +187,7 @@ class AdminForm extends Component {
               id="clearBtn"
               type="reset"
               className="btn btn-warning"
-              onClick={this.clearState}
-            />
+              onClick={this.clearState} />
           </div>
         </form>
       </div>

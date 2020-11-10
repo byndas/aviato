@@ -5,7 +5,7 @@ import PagePosts from "../PagePosts.component";
 import AdminForm from "../AdminForm.component";
 import Footer from "../../footer/Footer.component";
 import Poster from "../../images/jpg/starPoster.jpg";
-import { backgroundColor } from "../catalog/Catalog.component";
+
 
 class Gallery extends Component {
   constructor(props) {
@@ -44,7 +44,7 @@ class Gallery extends Component {
         ));
     }
     return (
-      <div style={backgroundColor}>
+      <div>
         <div className="container">
           <div
             id="carouselExampleCaptions"
@@ -75,6 +75,7 @@ class Gallery extends Component {
               data-slide="prev"
             >
               <span
+              style={{backgroundColor: 'gray', borderRadius: '50%'}}
                 className="carousel-control-prev-icon"
                 aria-hidden="true"
               ></span>
@@ -84,12 +85,11 @@ class Gallery extends Component {
               className="carousel-control-next"
               href="#carouselExampleCaptions"
               role="button"
-              data-slide="next"
-            >
+              data-slide="next" >
               <span
+                style={{backgroundColor: 'gray', borderRadius: '50%'}}
                 className="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
+                aria-hidden="true" ></span>
               <span className="sr-only">Next</span>
             </a>
           </div>

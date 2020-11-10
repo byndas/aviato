@@ -36,7 +36,7 @@ class AirPlane extends Component {
     }
     return (
       <div className="container border-bottom">
-        <h1 className="text-center font-italic heading p-3 airplane text-uppercase">
+        <h1 className="text-center heading p-3 airplane text-uppercase">
           {AirPlane}
         </h1>
         <div className="row row-cols-1 row-cols-md-2 mt-5">{planeList}</div>
