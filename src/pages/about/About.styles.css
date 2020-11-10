@@ -1,12 +1,12 @@
 
  .paragraph_background {
-     background-image: linear-gradient(to right, rgba(72,148,215, .5) 0%, rgba(0,29,150, .6) 50%, transparent 100%);
      opacity: .7;
      border-radius: 1rem;
+     width: 80%;
  }
 
  .about-page {
-   background-image: url(../../images/jpg/propeller.jpg);
+   background-image: url(../../images/jpg/landings/landing03.jpg);
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center;

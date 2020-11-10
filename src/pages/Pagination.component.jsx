@@ -5,19 +5,18 @@ const Pagination = ({ perPage, total, paginate, currPage }) => {
   for (let i = 1; i < Math.ceil(total / perPage); i++) {
     pageNumbers.push(i);
   }
-
   return (
     <nav>
       <ul className="pagination justify-content-center">
         <li className="page-item">
-          <a
+          {currPage !== 1 && <a
+            type='button'
             onClick={() => paginate(currPage - 1)}
             className="page-link"
             href="#top"
-            aria-label="Previous"
-          >
+            aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
-          </a>
+          </a>}
         </li>
         {pageNumbers.map((page, i) => (
           <li key={page} className="page-item">
@@ -35,14 +34,12 @@ const Pagination = ({ perPage, total, paginate, currPage }) => {
           </li>
         ))}
         <li className="page-item">
-          <a
-            onClick={() => paginate(currPage + 1)}
+          {total / perPage >= currPage && <a onClick={() => paginate(currPage + 1)}
             className="page-link"
             href="#top"
-            aria-label="Next"
-          >
+            aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
-          </a>
+          </a>}
         </li>
       </ul>
     </nav>

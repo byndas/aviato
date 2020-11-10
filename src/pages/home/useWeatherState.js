@@ -10,7 +10,6 @@ function useWeatherState() {
       const res = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_Key}`
       );
-      console.log(res.data)
       setState({
         temp: Math.floor(res.data.main.temp - 272.15),
         skye: res.data.weather[0].id,

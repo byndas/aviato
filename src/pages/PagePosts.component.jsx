@@ -53,51 +53,35 @@ class PagePosts extends Component {
     const { language } = this.context;
     const { ReadMore } = translate[language];
     const { auth, id, src, textGeo, textEng, textRus,title,name,pageName } = this.props;
+    const text = language === 'Geo' ? textGeo : language === 'Eng' ? textEng : language === 'Rus' ? textRus : ''
 
     switch (pageName) {
       case "projects":
         return (
           <div>
             <div className="card project_content_title mt-5">
-              <div className="card-header project_content_header text-center text-uppercase">
-                {name}
+              <div className="card-header project_content_header text-uppercase">
+                <h5 className='project-name'>{name}</h5>
                 {auth && (
                   <div className="float-right">
                     <FontAwesomeIcon
                       type="button"
-                      onClick={() => {
-                        this.handleEdit(
-                          id,
-                          src,
-                          textGeo,
-                          textEng,
-                          textRus,
-                          title,
-                          name
-                        );
-                      }}
+                      onClick={() => {this.handleEdit( id, src, textGeo, textEng, textRus, title, name )}}
                       className="icons"
-                      icon={faEdit}
-                    />
+                      icon={faEdit}/>
                     <FontAwesomeIcon
                       type="button"
-                      onClick={() => {
-                        this.handleDelete(id, src, pageName);
-                      }}
+                      onClick={() => {this.handleDelete(id, src, pageName)}}
                       className="icons"
-                      icon={faTrash}
-                    />
-                  </div>
-                )}
+                      icon={faTrash}/>
+                  </div>)}
               </div>
-              <h5 className="card-title text-center p-3">{title}</h5>
-              <div className="card-body d-flex">
-                <div className="col-md-3">
-                  <img src={src} alt="..." className="img-thumbnail" />
-                </div>
+              <h5 className="p-3 project-name">{title}</h5>
+              <div className="card-body project-img-text">
+                  <img src={src} alt={name} className='rounded prj-image' />
                 <div className="col-md-8">
-                  <p className={ !expanded   ? "fade text-truncate" : "card-text text-truncate" }>
-                  {language === 'Geo' ? textGeo : language === 'Eng' ? textEng : language === 'Rus' ? textRus : ''}
+                  <p className="card-text">
+                  {text.substring(0, 400)}...
                   </p>
                   <button
                     onClick={this.handleClick}
@@ -111,60 +95,54 @@ class PagePosts extends Component {
                   </button>
                 </div>
               </div>
-            </div>
-            <div className="collapse single_project" id={id}>
-              <div className="container col-md-6">
-                <img src={src} className="mt-5 img-thumbnail" alt="..." />
-              </div>
-              <div style={{ backgroundColor: "blue", color: "white" }}
-                 className="container col-md-8 text-center mt-3 rounded p-3" >
-                {language === 'Geo' ? textGeo : language === 'Eng' ? textEng : language === 'Rus' ? textRus : ''}
-              </div>
+              <div className="collapse" id={id}>
+                  <div className="card-body">
+                    <p className="card-text">
+                  {text}
+                    </p>
+                  </div>
+                </div>
             </div>
           </div>
         );
       case "news":
         return (
-          <div className="container border mb-3">
-            <h5 className="text-center p-3 text-uppercase">{name}</h5>
-            <div className="container">
+          <div className="container mb-3 border-bottom shadow p-3 mb-5 bg-white rounded">
+            <h2 className="p-3 text-uppercase border-bottom">{name}</h2>
               {auth && (
                 <div className="float-right">
                   <FontAwesomeIcon
                     type="button"
-                    onClick={() => {
-                      this.handleEdit(
-                        id,
-                        src,
-                        textGeo,
-                        textEng,
-                        textRus,
-                        title,
-                        name
-                      );
-                    }}
-                    icon={faEdit}
-                  />
+                    onClick={() => {this.handleEdit( id, src, textGeo, textEng, textRus, title, name )}}
+                    icon={faEdit} />
                   <FontAwesomeIcon
                     type="button"
-                    onClick={() => {
-                      this.handleDelete(id, src, pageName);
-                    }}
-                    icon={faTrash}
-                  />
+                    onClick={() => { this.handleDelete(id, src, pageName) }}
+                    icon={faTrash} />
+                </div> )}
+              <p className="p-3 font-weight-bold">{title}</p>
+                  <div className='p_and_image card-body'>
+                   <img src={src} className="nws-image rounded" alt={name} />
+                     <p className="news-text">
+                     {text.substring(0, 400)}...
+                   </p>
                 </div>
-              )}
-              <img
-                src={src}
-                className="nws-image rounded img-thumbnail"
-                alt={name}
-              />
-              <h5 className="text-center p-3">{title}</h5>
-              <p className="text-center news-text font-weight-bold">
-                {language === 'Geo' ? textGeo : language === 'Eng' ? textEng : language === 'Rus' ? textRus : ''} 
-              </p>
+                <button 
+                  className={`${expanded ? 'btn read_more shadow bg-white rounded' : 'btn read_more bg-white rounded'}`}
+                  onClick={this.handleClick} 
+                  type="button"
+                  data-toggle="collapse"
+                  data-target={`#${id}`}
+                  aria-expanded="false"
+                  aria-controls="collapseExample">
+                  {ReadMore}
+                </button>
+                <div className="collapse" id={id}>
+                  <div className="card-body">
+                  {text}
+                  </div>
+                </div>
             </div>
-          </div>
         );
       case "catalog":
         return (
@@ -179,7 +157,7 @@ class PagePosts extends Component {
                 <div className="card-body">
                   <h5 className="card-title">{name}</h5>
                   <p className={!expanded ? "fade text-truncate" : "card-text text-truncate"} >
-                  {language === 'Geo' ? textGeo : language === 'Eng' ? textEng : language === 'Rus' ? textRus : ''}
+                     {text}
                   </p>
                   <button
                     onClick={this.handleClick}
@@ -224,7 +202,7 @@ class PagePosts extends Component {
                 <div className="collapse" id={id}>
                   <div className="card-body">
                     <p className="card-text">
-                    {language === 'Geo' ? textGeo : language === 'Eng' ? textEng : language === 'Rus' ? textRus : ''}
+                      {text}
                     </p>
                   </div>
                 </div>
@@ -234,7 +212,7 @@ class PagePosts extends Component {
         );
       case "gallery":
         return (
-         
+  
             <div className="carousel-item mt-5 mb-5 rounded">
               <img src={src} className="gallery_img" alt="..." />
               <div id="flex" className="carousel-caption">
