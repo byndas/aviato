@@ -1,5 +1,6 @@
 const translate = {
     Geo: {
+      ContactDetails: 'საკონტაქტო ინფორმაცია',
       NotamiAgency: 'საქართველოს სამოქალაქო ავიაციის სააგენტო',
       Search: 'ძებნა',
       Tbilisi: 'თბილისი',
@@ -30,6 +31,7 @@ const translate = {
       Abouttext: 'ფადიკო გოგიტიძე პირველი ქართველი მფრინავი ქალია. იგი 1916 წელს ქობულეთში დაიბადა. 1936 წელს დაამთავრა თბილისის საფრენოსნო სკოლა. როგორც გაზეთი “საბჭოთა აჭარა” 1936 წლის აგვისტოს ნომერში წერდა, ფადიკო გოგიტიძეს საფრენოსნო საქმე ერთ წელში უნდა შეესწავლა: „ერთ წელში უნდა დაუფლებოდა მანქანის მართვას. ერთ წელში უნდა გამხდარიყო მფრინავი…'
     },
     Eng: {
+      ContactDetails: 'Contact Details',
       speed: 'm/s',
       visibility: 'Visibility',
       km: 'km',
@@ -50,7 +52,7 @@ const translate = {
       Pilots: "Pilots",
       AirPlane: "Airplanes",
       WeatherOnTheRunways: "Weather On The Runways",
-      usefulLinks: "useful links",
+      usefulLinks: "Useful Links",
       Projects: 'Projects',
       Gallery: 'Gallery',
       Catalog: 'Catalog',
@@ -60,6 +62,7 @@ const translate = {
       Abouttext: 'Fadiko Gogitidze is the first Georgian woman pilot. He was born in 1916 in Kobuleti. In 1936 he graduated from Tbilisi Flying School. As the newspaper "Soviet Adjara" wrote in the August issue of 1936, Fadiko Gogitidze had to study the flight case in one year: "In one year he had to master driving a car. Must have become a pilot in one year…'
     },
     Rus: {
+      ContactDetails: 'Контактная информация',
       speed: 'м/с',
       visibility: 'видимость',
       km: 'Км',

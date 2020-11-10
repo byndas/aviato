@@ -11,10 +11,10 @@ function About() {
       <div>
         <div className='about-page'>
           <div className="container text-center">
-            <h1 className="p-3 font-italic heading text-uppercase">{AboutUs}</h1>
-            <div className="jumbotron jumbotron-fluid shadow p-9 mb-2 bg-white mt-5  paragraph_background">
+            <h1 className="p-3 heading text-uppercase">{AboutUs}</h1>
+            <div className="jumbotron container jumbotron-fluid shadow p-9 mb-2 bg-white mt-5 paragraph_background">
               <div className="container">
-                <p className="font-weight-bold">{Abouttext}</p>
+                <p>{Abouttext}</p>
               </div>
             </div>
           </div>

@@ -3,15 +3,14 @@ import React, { useContext } from "react";
 import useWeatherState from "./useWeatherState";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Runways from "./Runways.component";
-import { faPlaneDeparture } from "@fortawesome/free-solid-svg-icons";
-import { faShare } from "@fortawesome/free-solid-svg-icons";
+import { faShare, faPlaneDeparture, faFileImport } from "@fortawesome/free-solid-svg-icons";
 import { LanguageContext } from "../../context/LanguageContext";
 import UsefulLinks from "./UsefulLinks.component";
 import translate from "../../language/translate";
 
 function Home() {
   const { language } = useContext(LanguageContext);
-  const { WeatherOnTheRunways, usefulLinks, Notami, NotamiAgency } = translate[language];
+  const { WeatherOnTheRunways, usefulLinks, NotamiAgency } = translate[language];
   const [tbilisi, setTbilisi] = useWeatherState({});
   const [batumi, setBatumi] = useWeatherState({});
   const [kutaisi, setKutaisi] = useWeatherState({});
@@ -38,19 +37,15 @@ function Home() {
       </ul>
       <div className="links">
         <div className="btn-group dropdown runways show">
-          <button className="btn btn-Runways" 
+          <button className="btn btns" 
             type='button'
             onClick={getWeather} 
             data-toggle="dropdown"
             aria-haspopup="true"
-            aria-expanded="true" >{WeatherOnTheRunways}</button>
-          <button onClick={getWeather}
-            className="btn dropdown-toggle-split"
-            data-toggle="dropdown"
-            aria-haspopup="true"
             aria-expanded="true" >
-            <FontAwesomeIcon icon={faPlaneDeparture} />
-          </button>
+              {WeatherOnTheRunways}
+              <FontAwesomeIcon icon={faPlaneDeparture} />
+            </button>
           <div className="dropdown-menu weather">
             <Runways
               tbilisi={tbilisi}
@@ -61,50 +56,37 @@ function Home() {
               telavi={telavi} />
           </div>
         </div>
-        <div className="btn-group dropright usefulLinks">
+        <div className="btn-group dropdown usefulLinks">
           <button 
            type="button" 
-           className="btn btn-Links"
+           className="btn btns"
            data-toggle="dropdown"
            aria-haspopup="true"
            aria-expanded="false">
             {usefulLinks}
-          </button>
-          <button
-            className="btn dropdown-toggle-split"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false" >
             <FontAwesomeIcon icon={faShare} />
           </button>
           <div className="dropdown-menu">
             <UsefulLinks />
           </div>
         </div>
-        <div className="btn-group dropright notami">
+        <div className="btn-group droprdown notami">
           <button 
            type="button" 
-           className="btn"
+           className="btn btns"
            data-toggle="dropdown"
            aria-haspopup="true"
            aria-expanded="false">
-            {Notami}
-          </button>
-          <button
-            className="btn dropdown-toggle-split"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false">
-            <FontAwesomeIcon icon={faShare} />
+            NOTAMI
+            <FontAwesomeIcon icon={faFileImport} />
           </button>
           <div className="dropdown-menu">
             <div className="list-group list_content">
               <a
-                href="http://gcaa.ge/geo/"
+                href="http://gcaa.ge/geo/NOTAM.php"
                 rel="noopener noreferrer"
                 target="_blank"
-                className="list-group-item list-group-item-action"
-              >
+                className="list-group-item list-group-item-action">
                 {NotamiAgency}
               </a>
             </div>

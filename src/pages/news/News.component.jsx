@@ -5,7 +5,6 @@ import PagePosts from "../PagePosts.component";
 import AdminForm from "../AdminForm.component";
 import Pagination from "../Pagination.component";
 import Footer from "../../footer/Footer.component";
-import { backgroundColor } from "../catalog/Catalog.component";
 import { LanguageContext } from "../../context/LanguageContext";
 import translate from "../../language/translate";
 
@@ -48,12 +47,12 @@ function News({ auth, reduxNews }) {
     ));
   }
   return (
-    <div style={backgroundColor}>
-      <h1 className="text-center font-italic heading p-4 text-uppercase">
+    <div>
+      <h1 className="text-center heading p-4 text-uppercase">
         {News}
       </h1>
       {auth && <AdminForm editObj={state} pageName="news" />}
-      <div className="container mt-5">
+      <div className="mt-5">
         {newsList}
         {!auth && (
           <Pagination

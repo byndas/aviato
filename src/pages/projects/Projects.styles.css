@@ -20,18 +20,44 @@
   width: 70%;
   height: auto;
   color: white;
-  transition: all 0.3s ease-in-out;
 }
 
 .project_content_header {
   background-color: rgba(3, 41, 165, 0.8);
 }
 
-.project_content_title:hover {
-  background-color: rgba(3, 41, 165, 0.8);
-  transform: scale(1.03);
-  cursor: pointer;
+@media (min-width: 320px){
+  .prj-image {
+     width: 15rem;
+     height: 15rem;
+     margin-left: 1rem;
+  }
+  .project_content_title {
+    width: 90%;
+  }
+  .project-name {
+     text-align: center;
+  }
 }
 
+@media(min-width: 768px){
+  .project-img-text {
+    display: flex;
+  }
+  .project_content_title {
+    width: 95%;
+  }
+}
 
+@media (min-width: 1200px){
+  .project-img-text {
+    display: flex;
+  }
+  .project_content_title {
+    width: 70%;
+  }
+  .project-name {
+    text-align: left;
+  }
+}
 

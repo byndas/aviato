@@ -12,7 +12,7 @@ function Pilots () {
     const { Pilots } = translate[language];
     return (
       <div className="container mt-5 mb-5">
-        <h1 className="text-center font-italic heading">{Pilots}</h1>
+        <h1 className="text-center heading">{Pilots}</h1>
         <div className="media pilot_container">
           <img src={pilot01} className="align-self-center mr-3 rounded-circle pilot_images" alt="..." />
           <div className="media-body">

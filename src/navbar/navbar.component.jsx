@@ -1,13 +1,12 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import "./navbar.styles.css";
-
-import Logo from "../images/logo.png";
-import youtube from "../images/svg/youtube.svg";
-import instagramIcon from "../images/svg/instagramIcon.svg";
-import facebookIcon from "../images/svg/facebookIcon.svg";
+import Logo from '../images/logo.png'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { LanguageContext } from "../context/LanguageContext";
-import { fireAuth } from "../Firebase.config";
+import { fireAuth} from "../Firebase.config";
 import translate from "../language/translate";
 
 class Navbar extends React.Component {
@@ -29,61 +28,46 @@ class Navbar extends React.Component {
     const { auth, searchInput, setSearchInput } = this.props;
     const { language, handleChange } = this.context;
     const logOut = () => fireAuth.signOut();
-    const {
-      News,
-      Home,
-      AboutUs,
-      Projects,
-      Gallery,
-      Catalog,
-      Contact,
-      Search
-    } = translate[language];
+    const { News, Home, AboutUs, Projects, Gallery, Catalog, Contact, Search} = translate[language];
     return (
       <div>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark background">
+        <nav className="navbar navbar-expand-lg navbar-dark background">
           <Link className="navbar-brand" to="/">
             <img alt="logo" className="logo" src={Logo} />
           </Link>
-          <a
-            className="navbar-toggler"
+          <a className="navbar-toggler"
             type="button"
             data-toggle="collapse"
             data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
-            href="/"
-          >
+            href="/">
             <span className="navbar-toggler-icon"></span>
           </a>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav mr-auto">
+            <ul className="navbar-nav mr-auto nav_links">
               <li
                 className="nav-item"
                 data-toggle="collapse"
                 data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent"
                 aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
+                aria-label="Toggle navigation">
                 <Link className="nav-link link_color" to="/">
                   {Home}
                 </Link>
               </li>
-              <li
-                className="nav-item"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
+              <li className="nav-item"
+                  data-toggle="collapse"
+                  data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation">
                 <Link className="nav-link link_color" to="/news">
                   {News}
                 </Link>
               </li>
-
               <li
                 className="nav-item"
                 data-toggle="collapse"
@@ -97,131 +81,84 @@ class Navbar extends React.Component {
                 </Link>
               </li>
 
-              <li
-                className="nav-item"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
+              <li className="nav-item"
+                  data-toggle="collapse"
+                  data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation" >
                 <Link className="nav-link link_color" to="/projects">
                   {Projects} <span className="sr-only">(current)</span>
                 </Link>
               </li>
-
-              <li
-                className="nav-item"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
+              <li className="nav-item"
+                  data-toggle="collapse"
+                  data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation">
                 <Link className="nav-link link_color" to="/gallery">
                   {Gallery} <span className="sr-only">(current)</span>
                 </Link>
               </li>
 
-              <li
-                className="nav-item"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
+              <li className="nav-item"
+                  data-toggle="collapse"
+                  data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation" >
                 <Link className="nav-link link_color" to="/catalog">
                   {Catalog}
                 </Link>
               </li>
-
-              <li
-                className="nav-item"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
+              <li className="nav-item"
+                  data-toggle="collapse"
+                  data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation">
                 <Link className="nav-link link_color" to="/contact">
                   {Contact}
                 </Link>
               </li>
             </ul>
-            <div className="mr-auto">
-              <ul className="nav mr-auto">
-                <li className="nav-item social_icon_container">
-                  <a
-                    className="nav-link"
-                    href="https://www.youtube.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img className="youtube_icon" src={youtube} alt="youtube" />
-                  </a>
-                </li>
-                <li className="nav-item social_icon_container">
-                  <a
-                    href="https://www.instagram.com/?hl=en"
-                    className="nav-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      className="instagram_icon"
-                      src={instagramIcon}
-                      alt="instagram"
-                    />
-                  </a>
-                </li>
-                <li className="nav-item social_icon_container">
-                  <a
-                    href="https://www.facebook.com/LIVE.Branding.Official/posts/3465174490183797"
-                    className="nav-link"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <img
-                      className="facebook_icon"
-                      src={facebookIcon}
-                      alt="facebook"
-                    />
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <form
-              style={{ marginLeft: "30px" }}
-              className="form-inline my-2 my-lg-0 mr-auto"
-              onSubmit={this.handleClick}
-            >
+            <form className='search' onSubmit={this.handleClick}>
               <input
                 id="search"
                 name="searchState"
-                style={{ width: "150px", height: "35px" }}
-                className="form-control mr-sm-2"
+                className="search__input"
                 type="search"
                 aria-label="Search"
                 placeholder={Search}
                 value={searchInput}
-                onChange={setSearchInput}
-              />
+                onChange={setSearchInput} />
               <button
                 id="searchBtn"
-                style={{ width: "75px", height: "35px" }}
-                className="btn btn-outline-success my-2 my-sm-0"
                 type="button"
+                className='search__button'
                 onClick={this.handleClick}
                 data-toggle="collapse"
                 data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent"
                 aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                {Search}
+                aria-label="Toggle navigation">
+                <FontAwesomeIcon className='search__icon' icon={faSearch}/>
               </button>
             </form>
+            <div className="d-flex socials justify-content-between">
+                  <a href="https://www.facebook.com/LIVE.Branding.Official/posts/3465174490183797"
+                      rel="noopener noreferrer"
+                      target="_blank">
+                    <FontAwesomeIcon icon={faFacebook} style={{color: 'rgba(255,255,255,.5)'}}/>
+                  </a>
+                  <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" >
+                    <FontAwesomeIcon icon={faYoutube} style={{color: 'rgba(255,255,255,.5)'}}/>
+                  </a>
+                  <a href="https://www.instagram.com/?hl=en" target="_blank" rel="noopener noreferrer" >
+                    <FontAwesomeIcon icon={faInstagram} style={{color: 'rgba(255,255,255,.5)'}}/>
+                  </a>
+            </div>
             {auth && (
               <div className="option" onClick={logOut}>
                 LOG OUT

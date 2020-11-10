@@ -5,9 +5,7 @@ import AirPlane from "./AirPlane.component";
 import Pilots from "./Pilots.component";
 import Footer from "../../footer/Footer.component";
 
-export const backgroundColor = {
-  backgroundImage: "linear-gradient(to right, #d8e2f9, #83abed)"
-};
+
 
 class Catalog extends Component {
   constructor(props) {
@@ -24,7 +22,7 @@ class Catalog extends Component {
     const { auth, reduxCatalog } = this.props;
 
     return (
-      <div style={backgroundColor}>
+      <div>
         {auth && <AdminForm editObj={this.state} pageName="catalog" />}
         <AirPlane
           auth={auth}
