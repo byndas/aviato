@@ -27,6 +27,7 @@ class App extends React.Component {
     };
     this.setSearchInput = this.setSearchInput.bind(this);
     this.onFireDbChange = this.onFireDbChange.bind(this);
+    this.clearInput = this.clearInput.bind(this);
   }
   onFireDbChange(snapshot) {
     this.props.updateReduxWithFireDb(snapshot.val());
@@ -50,6 +51,12 @@ class App extends React.Component {
     });
   }
 
+  clearInput(){
+    this.setState({
+      searchInput: ''
+    })
+  }
+
   render() {
     const { auth, searchInput } = this.state;
     return (
@@ -59,6 +66,7 @@ class App extends React.Component {
             auth={auth}
             searchInput={searchInput}
             setSearchInput={this.setSearchInput}
+            clearInput={this.clearInput}
           />
           <Switch>
             <Route exact path="/" component={Home} />

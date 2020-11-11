@@ -69,12 +69,14 @@
 }
 
 .runways button {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(246,185,6, .9);
   transition: all 0.3s ease-in-out;
+  color: #fff;
 }
 
 .runways button:hover {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color:#e4aa04;
+  color: #fff;
 }
 
 .usefulLinks {
@@ -90,21 +92,25 @@
 }
 
 .notami button {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(246,185,6, .9);
   transition: all 0.3s ease-in-out;
+  color: #fff;
 }
 
 .notami button:hover {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color:#e4aa04;
+  color: #fff;
 }
 
 .usefulLinks button {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(246,185,6, .9);
   transition: all 0.3s ease-in-out;
+  color: #fff;
 }
 
 .usefulLinks button:hover {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color:#e4aa04;
+  color: #fff;
 }
 
 .list_content {
@@ -167,19 +173,19 @@
     margin-left: 4.5rem;
   }
   .windBt {
-      margin-left: 5.2rem;
+      margin-left: 5.3rem;
   }
   .windKt {
-      margin-left: 4.5rem;
+      margin-left: 4.6rem;
   }
   .windMe {
       margin-left: 6.3rem;
   }
   .windAm {
-      margin-left: 1.7rem;
+      margin-left: 1.85rem;
   }
   .windTe {
-      margin-left: 5rem;
+      margin-left: 4.9rem;
   }
 }
 

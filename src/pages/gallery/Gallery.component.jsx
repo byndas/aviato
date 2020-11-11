@@ -5,7 +5,8 @@ import PagePosts from "../PagePosts.component";
 import AdminForm from "../AdminForm.component";
 import Footer from "../../footer/Footer.component";
 import Poster from "../../images/jpg/starPoster.jpg";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 class Gallery extends Component {
   constructor(props) {
@@ -14,7 +15,6 @@ class Gallery extends Component {
     this.state = null;
     this.editPostInputs = this.editPostInputs.bind(this);
   }
-
   editPostInputs(postObj) {
     this.setState(postObj);
   }
@@ -44,13 +44,12 @@ class Gallery extends Component {
         ));
     }
     return (
-      <div>
+      <div style={{backgroundColor: '#fff1d0'}}>
         <div className="container">
           <div
             id="carouselExampleCaptions"
             className="carousel carousel-fade slide gallery_container"
-            data-ride="carousel"
-          >
+            data-ride="carousel">
             <ol className="carousel-indicators">
               <li
                 data-target="#carouselExampleCaptions"
@@ -68,28 +67,18 @@ class Gallery extends Component {
               </div>
               {galleryList}
             </div>
-            <a
-              className="carousel-control-prev"
-              href="#carouselExampleCaptions"
-              role="button"
-              data-slide="prev"
-            >
-              <span
-              style={{backgroundColor: 'gray', borderRadius: '50%'}}
-                className="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
+            <a className="carousel-control-prev"
+                href="#carouselExampleCaptions"
+                role="button"
+                data-slide="prev">
+              <FontAwesomeIcon style={{color: '#f6b906'}} className="carousel-control-next-icon" aria-hidden="true" icon={faArrowLeft} />
               <span className="sr-only">Previous</span>
             </a>
-            <a
-              className="carousel-control-next"
-              href="#carouselExampleCaptions"
-              role="button"
-              data-slide="next" >
-              <span
-                style={{backgroundColor: 'gray', borderRadius: '50%'}}
-                className="carousel-control-next-icon"
-                aria-hidden="true" ></span>
+            <a className="carousel-control-next"
+                href="#carouselExampleCaptions"
+                role="button"
+                data-slide="next" >
+              <FontAwesomeIcon style={{color: '#f6b906'}} className="carousel-control-next-icon" aria-hidden="true" icon={faArrowRight} />
               <span className="sr-only">Next</span>
             </a>
           </div>

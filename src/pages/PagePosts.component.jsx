@@ -84,8 +84,9 @@ class PagePosts extends Component {
                   {text.substring(0, 400)}...
                   </p>
                   <button
+                    style={{fontWeight: '500'}}
                     onClick={this.handleClick}
-                    className="btn btn-primary"
+                    className="btn shadow"
                     type="button"
                     data-toggle="collapse"
                     data-target={`#${id}`}
@@ -107,7 +108,7 @@ class PagePosts extends Component {
         );
       case "news":
         return (
-          <div className="container mb-3 border-bottom shadow p-3 mb-5 bg-white rounded">
+          <div className="container mb-3 shadow p-3 mb-5 rounded news_container">
             <h2 className="p-3 text-uppercase border-bottom">{name}</h2>
               {auth && (
                 <div className="float-right">
@@ -128,7 +129,7 @@ class PagePosts extends Component {
                    </p>
                 </div>
                 <button 
-                  className={`${expanded ? 'btn read_more shadow bg-white rounded' : 'btn read_more bg-white rounded'}`}
+                  className={`${expanded ? 'btn read_more shadow rounded' : 'btn read_more rounded'}`}
                   onClick={this.handleClick} 
                   type="button"
                   data-toggle="collapse"
@@ -149,25 +150,21 @@ class PagePosts extends Component {
           <div className="col mb-4">
             <div className="card shadow p-3 mb-5 rounded border-0 airplain_background">
               <div className="container text-center">
-                <img
-                  src={src}
-                  className="card-img-top rounded ctl-image"
-                  alt={name}
-                />
+                <img src={src} className="card-img-top rounded ctl-image" alt={name}/>
                 <div className="card-body">
                   <h5 className="card-title">{name}</h5>
                   <p className={!expanded ? "fade text-truncate" : "card-text text-truncate"} >
                      {text}
                   </p>
                   <button
+                    style={{color: '#333', fontWeight: 500}}
                     onClick={this.handleClick}
-                    className="btn btn-primary"
+                    className="btn shadow"
                     type="button"
                     data-toggle="collapse"
                     data-target={`#${id}`}
                     aria-expanded="false"
-                    aria-controls="collapseExample"
-                  >
+                    aria-controls="collapseExample" >
                     {ReadMore}
                   </button>
                   {auth && (
@@ -186,8 +183,7 @@ class PagePosts extends Component {
                           );
                         }}
                         className="icons"
-                        icon={faEdit}
-                      />
+                        icon={faEdit} />
                       <FontAwesomeIcon
                         type="button"
                         onClick={() => {
@@ -214,10 +210,10 @@ class PagePosts extends Component {
         return (
   
             <div className="carousel-item mt-5 mb-5 rounded">
-              <img src={src} className="gallery_img" alt="..." />
+              <img src={src} className="gallery_img rounded" alt="..." />
               <div id="flex" className="carousel-caption">
                 <p className="gallery_text font-italic text-center">
-                {language === 'Geo' ? textGeo : language === 'Eng' ? textEng : language === 'Rus' ? textRus : ''}
+                 {text}
                   {auth && (
                     <div>
                       <FontAwesomeIcon

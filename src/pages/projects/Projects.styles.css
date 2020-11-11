@@ -6,25 +6,31 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  /* background-color: #fff1d0; */
 }
 
 .project_title {
   text-align: center;
   text-transform: uppercase;
-  color: #22366e;
+  /* color: #22366e; */
 }
 
 .project_content_title {
   margin: auto;
-  background-color: rgba(3, 41, 165, 0.65);
+  background-color: #ffd571;
   width: 70%;
   height: auto;
-  color: white;
+  color: #333;
 }
 
 .project_content_header {
-  background-color: rgba(3, 41, 165, 0.8);
+  background-color:#f6b906;
 }
+
+.active_color{
+  background-color: #f6b906;
+}
+
 
 @media (min-width: 320px){
   .prj-image {

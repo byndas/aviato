@@ -1,5 +1,7 @@
 import React from "react";
 
+
+
 const Pagination = ({ perPage, total, paginate, currPage }) => {
   const pageNumbers = [];
   for (let i = 1; i < Math.ceil(total / perPage); i++) {
@@ -25,10 +27,9 @@ const Pagination = ({ perPage, total, paginate, currPage }) => {
               href="#top"
               className={`${
                 currPage === page
-                  ? "page-link bg-primary text-white"
+                  ? "page-link active_color text-white"
                   : "page-link"
-              }`}
-            >
+              }`} >
               {page}
             </a>
           </li>

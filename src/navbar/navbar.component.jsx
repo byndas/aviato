@@ -31,9 +31,9 @@ class Navbar extends React.Component {
     const { News, Home, AboutUs, Projects, Gallery, Catalog, Contact, Search} = translate[language];
     return (
       <div>
-        <nav className="navbar navbar-expand-lg navbar-dark background">
+        <nav className="navbar navbar-expand-lg navbar-dark background shadow">
           <Link className="navbar-brand" to="/">
-            <img alt="logo" className="logo" src={Logo} />
+            <img alt="logo" onClick={this.props.clearInput} className='logo'src={Logo} />
           </Link>
           <a className="navbar-toggler"
             type="button"
@@ -46,7 +46,7 @@ class Navbar extends React.Component {
             <span className="navbar-toggler-icon"></span>
           </a>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav mr-auto nav_links">
+            <ul onClick={this.props.clearInput} className={`${language === 'Geo' ? 'navbar-nav mr-auto nav_links geo_font' : 'eng_rus_font navbar-nav mr-auto nav_links'}`}>
               <li
                 className="nav-item"
                 data-toggle="collapse"
@@ -137,26 +137,26 @@ class Navbar extends React.Component {
                 id="searchBtn"
                 type="button"
                 className='search__button'
-                onClick={this.handleClick}
+                // onClick={this.handleClick}
                 data-toggle="collapse"
                 data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent"
                 aria-expanded="false"
                 aria-label="Toggle navigation">
-                <FontAwesomeIcon className='search__icon' icon={faSearch}/>
+                <FontAwesomeIcon  onClick={this.handleClick} className='search__icon' icon={faSearch} style={{ color: '#f6b906'}}/>
               </button>
             </form>
-            <div className="d-flex socials justify-content-between">
+            <div className="socials">
                   <a href="https://www.facebook.com/LIVE.Branding.Official/posts/3465174490183797"
                       rel="noopener noreferrer"
                       target="_blank">
-                    <FontAwesomeIcon icon={faFacebook} style={{color: 'rgba(255,255,255,.5)'}}/>
+                    <FontAwesomeIcon icon={faFacebook} className='social_icons'/>
                   </a>
                   <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" >
-                    <FontAwesomeIcon icon={faYoutube} style={{color: 'rgba(255,255,255,.5)'}}/>
+                    <FontAwesomeIcon icon={faYoutube}  className='social_icons'/>
                   </a>
                   <a href="https://www.instagram.com/?hl=en" target="_blank" rel="noopener noreferrer" >
-                    <FontAwesomeIcon icon={faInstagram} style={{color: 'rgba(255,255,255,.5)'}}/>
+                    <FontAwesomeIcon icon={faInstagram}  className='social_icons'/>
                   </a>
             </div>
             {auth && (
