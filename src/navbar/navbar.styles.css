@@ -1,12 +1,34 @@
-
 .background {
   text-transform: uppercase;
- background-color: #1b62a5;
+  background-color:#f6b906;
   font-size: 13px;
 }
 
+.logo {
+  border-radius: 50%;
+}
 .link_color {
-  font-weight: 500;
+  color: #fff !important;
+  transition: .3s ;
+}
+
+.link_color:focus{
+  color: rgba(255,255,255, .5) !important;
+}
+
+.link_color:hover {
+  color:rgba(255,255,255, .5) !important;
+}
+
+.geo_font {
+  font-family: 'BPG Nino Mtavruli';
+  letter-spacing: 1.5px;
+  margin-top: .7rem;
+}
+
+.eng_rus_font {
+    font-weight: 500;
+    letter-spacing: 1.5px;
 }
 
 .language {
@@ -16,16 +38,26 @@
   border-radius: 50%;
   cursor: pointer;
   outline: none;
-  color:rgba(255,255,255,.5);
-  background-color:#1b62a5;
+  color:#fff;
+  background-color:#f6b906;
   border: none;
+}
+
+.social_icons {
+   color:#fff;
+   transition: .3s;
+}
+
+.social_icons:hover {
+   color: #f69100;
 }
 
 .option {
   cursor: pointer;
-  color: #4285f4;
-  border: 1px solid #4285f4;
+  color: #fff;
+  border: 1px solid #f6b906;
   text-align: center;
+ 
 } 
 
 .search {
@@ -58,18 +90,31 @@
   background-color:#f4f2f2;
 }
 
+@media (min-width: 320px){
+  .socials {
+    width: 3.5rem;
+    margin-top: .3rem;
+    margin-right: .7rem;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 @media (min-width: 992px){
   .search {
     flex: 0 0 22%;
     margin-right: -2rem;
     margin-top: .5rem;
   }
-  .socials {
-    width: 3.5rem;
-    margin-top: .3rem;
-    margin-right: .7rem;
+  .geo_font {
+    font-family: 'BPG Nino Mtavruli';
+    margin-top: .7rem;
+    letter-spacing: 0;
   }
-  
+  .eng_rus_font {
+    font-weight: 100;
+    letter-spacing: 0;
+}
 }
 
 @media (min-width: 1200px){
@@ -80,6 +125,12 @@
   }
   .nav_links {
     margin-left: 5rem;
-   
   }
+  .geo_font {
+    letter-spacing: 1.5px;
+  }
+  .eng_rus_font {
+    font-weight: 500;
+    letter-spacing: 1.5px;
+}
 }

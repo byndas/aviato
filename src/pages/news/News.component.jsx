@@ -47,8 +47,8 @@ function News({ auth, reduxNews }) {
     ));
   }
   return (
-    <div>
-      <h1 className="text-center heading p-4 text-uppercase">
+    <div className='news_background'>
+      <h1 style={{color: '#333'}} className="text-center p-4 text-uppercase">
         {News}
       </h1>
       {auth && <AdminForm editObj={state} pageName="news" />}
@@ -59,8 +59,7 @@ function News({ auth, reduxNews }) {
             paginate={paginate}
             currPage={currPage}
             perPage={newsPerPage}
-            total={reduxNews !== null && Object.values(reduxNews).length}
-          />
+            total={reduxNews !== null && Object.values(reduxNews).length}/>
         )}
       </div>
       <Footer />
