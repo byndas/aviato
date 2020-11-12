@@ -3,6 +3,9 @@
      opacity: .7;
      border-radius: 1rem;
      width: 80%;
+     background-color: #f6b906;
+     margin-top: 2rem;
+     color: black;
  }
 
  .about-page {
@@ -14,6 +17,12 @@
    width: 100vw;
  }
 
+ @media (max-width: 320px){
+  .paragraph_background {
+    width: 100%;
+    margin-top: 0;
+   }
+}
 
 
 

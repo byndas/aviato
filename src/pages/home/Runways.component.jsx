@@ -34,7 +34,7 @@ const Runways = ({tbilisi, batumi, kutaisi, telavi, ambrolauri, mestia}) => {
          <div className='d-flex justify-content-between'>
          <p className='btn border-bottom text-uppercase font-weight-bold'>
              {Batumi} : {batumi.temp === undefined ? '' : `${batumi.temp}°`}  {weathIcon(batumi.skye)}
-             <span className='windBt'>{wind}</span> : {`${batumi.wind}${speed}`} <span className='windBt'>{visibility}</span> : {`${batumi.visibility}${km}`}
+             <span className='windBt'>{wind}</span> : {`${batumi.wind}${speed}`} <span className='windTe'>{visibility}</span> : {`${batumi.visibility}${km}`}
          </p>
          </div>
          <div className='d-flex justify-content-between'>

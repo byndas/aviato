@@ -34,8 +34,12 @@ function News({ auth, reduxNews }) {
       <PagePosts
         auth={auth}
         editPostInputs={editPostInputs}
-        name={item.name}
-        title={item.title}
+        nameGeo={item.nameGeo}
+        nameEng={item.nameEng}
+        nameRus={item.nameRus}
+        titleGeo={item.titleGeo}
+        titleEng={item.titleEng}
+        titleRus={item.titleRus}
         textGeo={item.textGeo}
         textEng={item.textEng}
         textRus={item.textRus}
@@ -47,8 +51,8 @@ function News({ auth, reduxNews }) {
     ));
   }
   return (
-    <div>
-      <h1 className="text-center heading p-4 text-uppercase">
+    <div className="news_background">
+      <h1 style={{ color: "#333" }} className="text-center p-4 text-uppercase">
         {News}
       </h1>
       {auth && <AdminForm editObj={state} pageName="news" />}

@@ -1,11 +1,9 @@
 import React, {useContext} from "react";
 import Footer from "../../footer/Footer.component";
-import facebook from "../../images/svg/facebookIcon.svg";
-import InstagramIcon from "../../images/svg/instagramIcon.svg";
 import "./Contact.styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faFacebook, faInstagram} from '@fortawesome/free-brands-svg-icons';
 import translate from '../../language/translate'
 import { LanguageContext } from '../../context/LanguageContext'
 
@@ -13,17 +11,17 @@ function Contact() {
   const { language } = useContext(LanguageContext);
   const { ContactDetails } = translate[language];
   return (
-    <div>
+    <div style={{backgroundColor: '#fff1d0'}}>
       <div className="contact_container">
         <div className="container mt-5 position-relative">
-          <div className='shadow p-3 mb-5 bg-white rounded contact-info'>
+          <div className='shadow p-3 mb-5 rounded contact-info'>
                <h2>{ContactDetails}</h2>
                <span className='d-flex mt-3 align-items-center'>
-                  <img className="facebook_icon" src={facebook} alt="facebookIcon"/>
+                  <FontAwesomeIcon className='facebook_icon' icon={faFacebook}/>
                   <p className='ml-3 mt-3'> geoaviation@gmail.com</p>
                </span>
                <span className='d-flex mt-3 align-items-center'>
-                <img src={InstagramIcon} className="instagram_icon" alt="instagramIcon" />
+                   <FontAwesomeIcon className='instagram_icon' icon={faInstagram}/>
                   <p className="mt-3 ml-3"> geoaviation@gmail.com</p>
                   </span>
                   <span className='d-flex mt-3 align-items-center'>

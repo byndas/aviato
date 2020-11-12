@@ -34,8 +34,12 @@ function Projects({ auth, reduxProjects }) {
       <PagePosts
         auth={auth}
         editPostInputs={editPostInputs}
-        name={item.name}
-        title={item.title}
+        nameGeo={item.nameGeo}
+        nameEng={item.nameEng}
+        nameRus={item.nameRus}
+        titleGeo={item.titleGeo}
+        titleEng={item.titleEng}
+        titleRus={item.titleRus}
         textGeo={item.textGeo}
         textEng={item.textEng}
         textRus={item.textRus}
@@ -64,7 +68,11 @@ function Projects({ auth, reduxProjects }) {
               <div className="modal-dialog modal-md">
                 <div className="modal-content">
                   <AdminForm editObj={state} pageName="projects" />
-                  <button type="button" className="btn btn-default" data-dismiss="modal" >
+                  <button
+                    type="button"
+                    className="btn btn-default"
+                    data-dismiss="modal"
+                  >
                     Close
                   </button>
                 </div>
