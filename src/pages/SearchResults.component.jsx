@@ -1,5 +1,5 @@
 import React from "react";
-import { LanguageContext } from '../context/LanguageContext'
+import { LanguageContext } from "../context/LanguageContext";
 import { connect } from "react-redux";
 
 class SearchResults extends React.Component {
@@ -12,20 +12,48 @@ class SearchResults extends React.Component {
     if (reduxState !== null) {
       if (typeof reduxState !== "undefined") {
         if (finalResultArr.length < 20) {
-        
           const pageMatches = [];
           const pageIds = Object.keys(reduxState);
           const pageValues = Object.values(reduxState);
           // collects redux page items that include the search input value
           for (let i = 0; i < pageValues.length; i++) {
-            if (pageValues[i].name.includes(searchInput)) {
-              pageMatches.push(pageValues[i]);
-              continue;
+            if (typeof pageValues[i].nameGeo !== "undefined") {
+              if (pageValues[i].nameGeo.includes(searchInput)) {
+                pageMatches.push(pageValues[i]);
+                continue;
+              }
             }
-            if (pageValues[i].title.includes(searchInput)) {
-              pageMatches.push(pageValues[i]);
-              continue;
+            if (typeof pageValues[i].nameEng !== "undefined") {
+              if (pageValues[i].nameEng.includes(searchInput)) {
+                pageMatches.push(pageValues[i]);
+                continue;
+              }
             }
+            if (typeof pageValues[i].nameRus !== "undefined") {
+              if (pageValues[i].nameRus.includes(searchInput)) {
+                pageMatches.push(pageValues[i]);
+                continue;
+              }
+            }
+            if (typeof pageValues[i].titleGeo !== "undefined") {
+              if (pageValues[i].titleGeo.includes(searchInput)) {
+                pageMatches.push(pageValues[i]);
+                continue;
+              }
+            }
+            if (typeof pageValues[i].titleEng !== "undefined") {
+              if (pageValues[i].titleEng.includes(searchInput)) {
+                pageMatches.push(pageValues[i]);
+                continue;
+              }
+            }
+            if (typeof pageValues[i].titleRus !== "undefined") {
+              if (pageValues[i].titleRus.includes(searchInput)) {
+                pageMatches.push(pageValues[i]);
+                continue;
+              }
+            }
+
             if (typeof pageValues[i].textGeo !== "undefined") {
               if (pageValues[i].textGeo.includes(searchInput)) {
                 pageMatches.push(pageValues[i]);
@@ -46,18 +74,35 @@ class SearchResults extends React.Component {
             }
           }
           let pageMatchDivArray = pageMatches.map((item, index) => (
-            <div style={{backgroundColor: '#fff1d0'}} className="container text-center mt-5 border-bottom"
+            <div
+              style={{ backgroundColor: "#fff1d0" }}
+              className="container text-center mt-5 border-bottom"
               id={pageIds[index]}
-              key={pageIds[index]} >
-              <img className='rounded prj-image' src={item.src} alt={item.name} />
-              <h2><strong>{item.name}</strong></h2>
-              <p><strong>{item.title}</strong></p>
+              key={pageIds[index]}
+            >
+              <img
+                className="rounded prj-image"
+                src={item.src}
+                alt={item.name}
+              />
+              <h2>
+                <strong>{item.name}</strong>
+              </h2>
+              <p>
+                <strong>{item.title}</strong>
+              </p>
               <p className="rounded p-3">
-                {language === 'Geo' ? item.textGeo : language === 'Eng' ? item.textEng : language === 'Rus' ? item.textRus : 'not found'}
+                {language === "Geo"
+                  ? item.textGeo
+                  : language === "Eng"
+                  ? item.textEng
+                  : language === "Rus"
+                  ? item.textRus
+                  : "not found"}
               </p>
             </div>
           ));
-        
+
           finalResultArr.push(...pageMatchDivArray);
         }
       }
@@ -70,17 +115,36 @@ class SearchResults extends React.Component {
 
     if (entireRedux !== null) {
       if (searchInput.trim().length) {
-        this.pageSearch(entireRedux.news, searchInput, finalSearchResults, language);
-        this.pageSearch(entireRedux.gallery, searchInput, finalSearchResults, language);
-        this.pageSearch(entireRedux.projects, searchInput, finalSearchResults, language);
-        this.pageSearch(entireRedux.catalog, searchInput, finalSearchResults, language);
+        this.pageSearch(
+          entireRedux.news,
+          searchInput,
+          finalSearchResults,
+          language
+        );
+        this.pageSearch(
+          entireRedux.gallery,
+          searchInput,
+          finalSearchResults,
+          language
+        );
+        this.pageSearch(
+          entireRedux.projects,
+          searchInput,
+          finalSearchResults,
+          language
+        );
+        this.pageSearch(
+          entireRedux.catalog,
+          searchInput,
+          finalSearchResults,
+          language
+        );
         if (!finalSearchResults.length) {
           finalSearchResults.push("NO SEARCH RESULTS");
         }
       } else {
         finalSearchResults.push("NO SEARCH RESULTS");
       }
-  
     }
     return <div className="container">{finalSearchResults}</div>;
   }
