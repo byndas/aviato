@@ -23,7 +23,9 @@ class AirPlane extends Component {
           <PagePosts
             auth={auth}
             editPostInputs={editPostInputs}
-            name={item.name}
+            nameGeo={item.nameGeo}
+            nameEng={item.nameEng}
+            nameRus={item.nameRus}
             textGeo={item.textGeo}
             textEng={item.textEng}
             textRus={item.textRus}

@@ -13,8 +13,12 @@ class AdminForm extends Component {
       imgFile: null, // "choose file" button populates imgFile
       src: null,
       id: null,
-      name: "",
-      title: "",
+      nameGeo: "",
+      nameEng: "",
+      nameRus: "",
+      titleGeo: "",
+      titleEng: "",
+      titleRus: "",
       textGeo: "",
       textEng: "",
       textRus: ""
@@ -29,8 +33,12 @@ class AdminForm extends Component {
     imgFile: null,
     src: null,
     id: null,
-    name: "",
-    title: "",
+    nameGeo: "",
+    nameEng: "",
+    nameRus: "",
+    titleGeo: "",
+    titleEng: "",
+    titleRus: "",
     textGeo: "",
     textEng: "",
     textRus: ""
@@ -43,6 +51,12 @@ class AdminForm extends Component {
         nextPropsEditObj.id !== this.state.id ||
         nextPropsEditObj.name !== this.state.name ||
         nextPropsEditObj.title !== this.state.title ||
+        nextPropsEditObj.nameGeo !== this.state.nameGeo ||
+        nextPropsEditObj.nameEng !== this.state.nameEng ||
+        nextPropsEditObj.nameRus !== this.state.nameRus ||
+        nextPropsEditObj.titleGeo !== this.state.titleGeo ||
+        nextPropsEditObj.titleEng !== this.state.titleEng ||
+        nextPropsEditObj.titleRus !== this.state.titleRus ||
         nextPropsEditObj.textGeo !== this.state.textGeo ||
         nextPropsEditObj.textEng !== this.state.textEng ||
         nextPropsEditObj.textRus !== this.state.textRus ||
@@ -80,12 +94,27 @@ class AdminForm extends Component {
 
     if (this.state === this.emptyState) return;
 
-    const { src, name, title, textGeo, textEng, textRus } = this.state;
+    const {
+      src,
+      nameGeo,
+      nameEng,
+      nameRus,
+      titleGeo,
+      titleEng,
+      titleRus,
+      textGeo,
+      textEng,
+      textRus
+    } = this.state;
     const { pageName } = this.props;
     const postObj = {
       src,
-      name,
-      title,
+      nameGeo,
+      nameEng,
+      nameRus,
+      titleGeo,
+      titleEng,
+      titleRus,
       textGeo,
       textEng,
       textRus
@@ -108,7 +137,17 @@ class AdminForm extends Component {
     }
   }
   render() {
-    const { name, title, textGeo, textEng, textRus } = this.state;
+    const {
+      nameGeo,
+      nameEng,
+      nameRus,
+      titleGeo,
+      titleEng,
+      titleRus,
+      textGeo,
+      textEng,
+      textRus
+    } = this.state;
     const { pageName } = this.props;
     return (
       <div className="container">
@@ -117,13 +156,31 @@ class AdminForm extends Component {
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input
-                value={name}
-                name="name"
+                value={nameGeo}
+                name="nameGeo"
                 onChange={this.handleChange}
                 type="text"
                 className="form-control"
                 id="name"
-                placeholder="name"
+                placeholder="Georgian name"
+              />
+              <input
+                value={nameEng}
+                name="nameEng"
+                onChange={this.handleChange}
+                type="text"
+                className="form-control"
+                id="name"
+                placeholder="English name"
+              />
+              <input
+                value={nameRus}
+                name="nameRus"
+                onChange={this.handleChange}
+                type="text"
+                className="form-control"
+                id="name"
+                placeholder="Russian name"
               />
             </div>
           )}
@@ -131,13 +188,31 @@ class AdminForm extends Component {
             <div className="form-group">
               <label htmlFor="title">Title</label>
               <input
-                value={title}
-                name="title"
+                value={titleGeo}
+                name="titleGeo"
                 onChange={this.handleChange}
                 type="text"
                 className="form-control"
                 id="title"
-                placeholder="title"
+                placeholder="Georgian title"
+              />
+              <input
+                value={titleEng}
+                name="titleEng"
+                onChange={this.handleChange}
+                type="text"
+                className="form-control"
+                id="title"
+                placeholder="English title"
+              />
+              <input
+                value={titleRus}
+                name="titleRus"
+                onChange={this.handleChange}
+                type="text"
+                className="form-control"
+                id="title"
+                placeholder="Russian title"
               />
             </div>
           )}
@@ -187,7 +262,8 @@ class AdminForm extends Component {
               id="clearBtn"
               type="reset"
               className="btn btn-warning"
-              onClick={this.clearState} />
+              onClick={this.clearState}
+            />
           </div>
         </form>
       </div>
