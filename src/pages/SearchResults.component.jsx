@@ -105,7 +105,7 @@ class SearchResults extends React.Component {
                     ? item.titleEng
                     : language === "Rus"
                     ? item.titleRus
-                    : nullLiteralTypeAnnotation}
+                    : null}
                 </strong>
               </p>
               <p className="rounded p-3">
