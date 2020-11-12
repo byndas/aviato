@@ -1,6 +1,7 @@
 import React from "react";
 import { LanguageContext } from "../context/LanguageContext";
 import { connect } from "react-redux";
+import { nullLiteralTypeAnnotation } from "@babel/types";
 
 class SearchResults extends React.Component {
   static contextType = LanguageContext;
@@ -86,10 +87,26 @@ class SearchResults extends React.Component {
                 alt={item.name}
               />
               <h2>
-                <strong>{item.name}</strong>
+                <strong>
+                  {language === "Geo"
+                    ? item.nameGeo
+                    : language === "Eng"
+                    ? item.nameEng
+                    : language === "Rus"
+                    ? item.nameRus
+                    : null}
+                </strong>
               </h2>
               <p>
-                <strong>{item.title}</strong>
+                <strong>
+                  {language === "Geo"
+                    ? item.titleGeo
+                    : language === "Eng"
+                    ? item.titleEng
+                    : language === "Rus"
+                    ? item.titleRus
+                    : nullLiteralTypeAnnotation}
+                </strong>
               </p>
               <p className="rounded p-3">
                 {language === "Geo"
@@ -98,7 +115,7 @@ class SearchResults extends React.Component {
                   ? item.textEng
                   : language === "Rus"
                   ? item.textRus
-                  : "not found"}
+                  : null}
               </p>
             </div>
           ));
