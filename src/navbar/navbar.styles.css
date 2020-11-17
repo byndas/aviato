@@ -1,6 +1,6 @@
 .background {
   text-transform: uppercase;
-  background-color:#f6b906;
+  background-color: #f6b906;
   font-size: 13px;
 }
 
@@ -9,26 +9,26 @@
 }
 .link_color {
   color: #fff !important;
-  transition: .3s ;
+  transition: 0.3s;
 }
 
-.link_color:focus{
-  color: rgba(255,255,255, .5) !important;
+.link_color:focus {
+  color: rgba(255, 255, 255, 0.5) !important;
 }
 
 .link_color:hover {
-  color:rgba(255,255,255, .5) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
 }
 
 .geo_font {
-  font-family: 'BPG Nino Mtavruli';
+  font-family: "BPG Nino Mtavruli";
   letter-spacing: 1.5px;
-  margin-top: .7rem;
+  margin-top: 0.7rem;
 }
 
 .eng_rus_font {
-    font-weight: 500;
-    letter-spacing: 1.5px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
 }
 
 .language {
@@ -38,18 +38,18 @@
   border-radius: 50%;
   cursor: pointer;
   outline: none;
-  color:#fff;
-  background-color:#f6b906;
+  color: #fff;
+  background-color: #f6b906;
   border: none;
 }
 
 .social_icons {
-   color:#fff;
-   transition: .3s;
+  color: #fff;
+  transition: 0.3s;
 }
 
 .social_icons:hover {
-   color: #f69100;
+  color: #f69100;
 }
 
 .option {
@@ -57,13 +57,12 @@
   color: #fff;
   border: 1px solid #f6b906;
   text-align: center;
- 
-} 
+}
 
 .search {
-    flex: 0 0 25%;
-    display: flex;
-    align-items: center;
+  flex: 0 0 25%;
+  display: flex;
+  align-items: center;
 }
 
 .search__input {
@@ -73,9 +72,9 @@
   border: none;
   color: inherit;
   border-radius: 10rem;
-  padding: .3rem 2rem;
+  padding: 0.3rem 2rem;
   width: 70%;
-  transition: all .3s;
+  transition: all 0.3s;
   margin-right: -3.25rem;
 }
 
@@ -87,41 +86,41 @@
 
 .search__button {
   border: none;
-  background-color:#f4f2f2;
+  background-color: #f4f2f2;
 }
 
-@media (min-width: 320px){
+@media (min-width: 320px) {
   .socials {
     width: 3.5rem;
-    margin-top: .3rem;
-    margin-right: .7rem;
+    margin-top: 0.3rem;
+    margin-right: 0.7rem;
     display: flex;
     justify-content: space-between;
   }
 }
 
-@media (min-width: 992px){
+@media (min-width: 992px) {
   .search {
     flex: 0 0 22%;
     margin-right: -2rem;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
   }
   .geo_font {
-    font-family: 'BPG Nino Mtavruli';
-    margin-top: .7rem;
+    font-family: "BPG Nino Mtavruli";
+    margin-top: 0.7rem;
     letter-spacing: 0;
   }
   .eng_rus_font {
     font-weight: 100;
     letter-spacing: 0;
-}
+  }
 }
 
-@media (min-width: 1200px){
+@media (min-width: 1200px) {
   .search {
     flex: 0 0 25%;
     margin-right: -2rem;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
   }
   .nav_links {
     margin-left: 5rem;
@@ -132,5 +131,11 @@
   .eng_rus_font {
     font-weight: 500;
     letter-spacing: 1.5px;
+  }
 }
+
+.navbar {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
 }

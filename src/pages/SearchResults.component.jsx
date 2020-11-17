@@ -1,7 +1,6 @@
 import React from "react";
 import { LanguageContext } from "../context/LanguageContext";
 import { connect } from "react-redux";
-import { nullLiteralTypeAnnotation } from "@babel/types";
 
 class SearchResults extends React.Component {
   static contextType = LanguageContext;
