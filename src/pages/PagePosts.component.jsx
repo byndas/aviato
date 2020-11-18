@@ -285,7 +285,7 @@ class PagePosts extends Component {
           <div className="carousel-item mt-5 mb-5 rounded">
             <img src={src} className="gallery_img rounded" alt="..." />
             <div id="flex" className="carousel-caption">
-              <p className="gallery_text font-italic text-center">
+              <p className="gallery_text text-center">
                 {text}
                 {auth && (
                   <div>

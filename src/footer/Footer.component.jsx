@@ -6,7 +6,7 @@ import {
   faInstagram,
   faYoutube
 } from "@fortawesome/free-brands-svg-icons";
-import logo from "../images/logo.png";
+import logo from "../images/logo.svg";
 import { Link } from "react-router-dom";
 import translate from "../language/translate";
 import { LanguageContext } from "../context/LanguageContext";
@@ -93,19 +93,17 @@ function Footer() {
               <p className="about text-center">{Abouttext}</p>
             </div>
             <div className="col item d-flex justify-content-center">
-              <a className="nav-link" href="https://www.youtube.com/">
+              <a className="nav-link" href="https://www.youtube.com/" rel="noopener noreferrer" target="_blank">
                 <FontAwesomeIcon className="footer_socials" icon={faYoutube} />
               </a>
-              <a href="https://www.instagram.com/?hl=en" className="nav-link">
+              <a href="https://www.instagram.com/?hl=en" className="nav-link" rel="noopener noreferrer" target="_blank">
                 <FontAwesomeIcon
                   className="footer_socials"
                   icon={faInstagram}
                 />
               </a>
-              <a
-                href="https://www.facebook.com/LIVE.Branding.Official/posts/3465174490183797"
-                className="nav-link"
-              >
+              <a href="https://www.facebook.com/LIVE.Branding.Official/posts/3465174490183797"
+                className="nav-link" rel="noopener noreferrer" target="_blank" >
                 <FontAwesomeIcon className="footer_socials" icon={faFacebook} />
               </a>
             </div>

@@ -36,7 +36,7 @@ function Contact() {
           <div className="google_map">
             <iframe
               title='location'
-              src="https://maps.google.com/maps?q=tbilisi&t=k&z=13&ie=UTF8&iwloc=&output=embed"
+              src="https://maps.google.com/maps?q=Tbilisi%20torinke%20eristavi%203&t=&z=13&ie=UTF8&iwloc=&output=embed"
               frameBorder="0"
               allowFullScreen
             ></iframe>
@@ -48,4 +48,5 @@ function Contact() {
   );
 }
 
+ 
 export default Contact;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import "./navbar.styles.css";
-import Logo from "../images/logo.png";
+import Logo from "../images/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -47,6 +47,7 @@ class Navbar extends React.Component {
         <nav className="navbar navbar-expand-lg navbar-dark background shadow">
           <Link className="navbar-brand" to="/">
             <img
+              style={{width: '4.5rem'}}
               alt="logo"
               onClick={this.props.clearInput}
               className="logo"
