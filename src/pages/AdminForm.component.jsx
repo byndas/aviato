@@ -49,8 +49,6 @@ class AdminForm extends Component {
     if (nextPropsEditObj !== null) {
       if (
         nextPropsEditObj.id !== this.state.id ||
-        nextPropsEditObj.name !== this.state.name ||
-        nextPropsEditObj.title !== this.state.title ||
         nextPropsEditObj.nameGeo !== this.state.nameGeo ||
         nextPropsEditObj.nameEng !== this.state.nameEng ||
         nextPropsEditObj.nameRus !== this.state.nameRus ||
@@ -91,7 +89,7 @@ class AdminForm extends Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-
+    window.scrollTo(0, 0);
     if (this.state === this.emptyState) return;
 
     const {
