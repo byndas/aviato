@@ -12,15 +12,9 @@ export const siteReducer = (state = INITAL_STATE, action) => {
     case UPDATE_REDUX_WITH_FIRE_DB:
       const base = action.payload;
 
-      switch ("undefined") {
-        case typeof base.catalog:
-          base.catalog = null;
-        case typeof base.gallery:
-          base.gallery = null;
-        case typeof base.news:
-          base.news = null;
-        case typeof base.projects:
-          base.projects = null;
+      if (typeof base.gallery === "undefined") {
+        console.log("GALLERY", base);
+        base.gallery = null;
       }
       return Object.assign({}, state, base);
     default:
