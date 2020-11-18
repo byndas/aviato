@@ -28,37 +28,37 @@ const Runways = ({tbilisi, batumi, kutaisi, telavi, ambrolauri, mestia}) => {
         <div className='d-flex justify-content-between'>
          <p className='btn border-bottom text-uppercase font-weight-bold'>
              {Tbilisi} : {tbilisi.temp === undefined ? '' : `${tbilisi.temp}°`}  {weathIcon(tbilisi.skye)} 
-             <span className='windTb'>{wind}</span> : {`${tbilisi.wind}${speed}`} <span className='windTb'>{visibility}</span> : {`${tbilisi.visibility}${km}`}
+             <span className='windTb'>{wind} : {`${tbilisi.wind}${speed}`}</span> <span className='windTb'>{visibility} : {`${tbilisi.visibility}${km}`}</span>
          </p>  
          </div>
          <div className='d-flex justify-content-between'>
          <p className='btn border-bottom text-uppercase font-weight-bold'>
              {Batumi} : {batumi.temp === undefined ? '' : `${batumi.temp}°`}  {weathIcon(batumi.skye)}
-             <span className='windBt'>{wind}</span> : {`${batumi.wind}${speed}`} <span className='windTe'>{visibility}</span> : {`${batumi.visibility}${km}`}
+             <span className='windBt'>{wind} : {`${batumi.wind}${speed}`}</span> <span className='windTb'>{visibility} : {`${batumi.visibility}${km}`}</span>
          </p>
          </div>
          <div className='d-flex justify-content-between'>
          <p className='btn border-bottom text-uppercase font-weight-bold'>
              {Kutaisi} : {kutaisi.temp === undefined ? '' : `${kutaisi.temp}°`}  {weathIcon(kutaisi.skye)}
-             <span className='windKt'>{wind}</span> : {`${kutaisi.wind}${speed}`} <span className='windMe'>{visibility}</span> : {`${kutaisi.visibility}${km}`} 
+             <span className='windKt'>{wind} : {`${kutaisi.wind}${speed}`} </span> <span className='windTb'>{visibility} : {`${kutaisi.visibility}${km}`} </span>
          </p>   
          </div>
          <div className='d-flex justify-content-between'>
          <p className='btn border-bottom text-uppercase font-weight-bold'>
              {Mestia} : {mestia.temp === undefined ? '' : `${mestia.temp}°`}  {weathIcon(mestia.skye)}
-             <span className='windMe'>{wind}</span> : {`${mestia.wind}${speed}`} <span className='windTb'>{visibility}</span> : {`${mestia.visibility}${km}`} 
+             <span className='windMe'>{wind} : {`${mestia.wind}${speed}`}</span> <span className='windTb'>{visibility} : {`${mestia.visibility}${km}`} </span>
          </p>
          </div>
          <div className='d-flex justify-content-between'>
          <p className='btn border-bottom text-uppercase font-weight-bold'>
              {Telavi} : {telavi.temp === undefined ? '' : `${telavi.temp}°`}  {weathIcon(telavi.skye)} 
-             <span className='windTe'>{wind}</span> : {`${telavi.wind}${speed}`} <span className='windTe'>{visibility}</span> : {`${telavi.visibility}${km}`}
+             <span className='windTe'>{wind}: {`${telavi.wind}${speed}`}</span>  <span className='windTb'>{visibility} : {`${telavi.visibility}${km}`} </span>
          </p> 
          </div>
          <div className='d-flex justify-content-between'>
          <p className='btn border-bottom text-uppercase font-weight-bold'>
              {Ambrolauri} : {ambrolauri.temp === undefined ? '' : `${ambrolauri.temp}°`}  {weathIcon(ambrolauri.skye)}
-             <span className='windAm'>{wind}</span> : {`${ambrolauri.wind}${speed}`} <span className='windMe'>{visibility}</span> : {`${ambrolauri.visibility}${km}`} 
+             <span className='windAm'>{wind}: {`${ambrolauri.wind}${speed}`} </span>  <span className='windMe'>{visibility} : {`${ambrolauri.visibility}${km}`} </span>
          </p>  
          </div>    
     </div>

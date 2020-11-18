@@ -2,15 +2,17 @@
   width: 100%;
   height: auto;
   margin-bottom: -1rem;
-  background-image: url(../../images/jpg/landings/landing03.jpg);
+  /* background-image: url(../../images/jpg/landings/landing03.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-
+  background-size: cover; */
+  background-color: #fff1d0;
 }
 
 .news_container{
    background-color: #ffd571;
+   /* background-color: #ffe3a1; */
+   /* background-color: rgba(246,185,6, .65); */
 }
 
 .read_more {
