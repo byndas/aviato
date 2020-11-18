@@ -15,46 +15,20 @@ class PagePosts extends Component {
     this.handleDelete = this.handleDelete.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
-  handleEdit(
-    id,
-    src,
-    textGeo,
-    textEng,
-    textRus,
-    nameGeo,
-    nameEng,
-    nameRus,
-    titleGeo,
-    titleEng,
-    titleRus
-  ) {
-    // scrolls up to Form
-    window.scrollTo(0, 0);
-    // populates sibling Form.jsx state (via parent component)
-    // with data (including ID) of admin update post
-    const editObj = {
-      id,
-      src,
-      textGeo,
-      textEng,
-      textRus,
-      nameGeo,
-      nameEng,
-      nameRus,
-      titleGeo,
-      titleEng,
-      titleRus
-    };
-
+  handleEdit(editObj) {
+    const element = document.getElementById("form");
+    // scrolls to bottom of AdminForm
+    this.props.pageName === "gallery"
+      ? element.scrollIntoView(false)
+      : window.scrollTo(0, 0);
+    // populates sibling AdminForm.jsx state (via parent component)
+    // with data (including ID) of admin edit post
     this.props.editPostInputs(editObj);
   }
   handleDelete(id, src, pageName) {
     if (src !== null) {
-      // DELETES IMAGE FROM FIREBASE STORAGE
       deleteImageFireStorage(src);
     }
-
-    // REMOVES POST FROM FIREBASE DB
     removePostFireDB(pageName, id);
   }
   handleClick() {
@@ -120,7 +94,7 @@ class PagePosts extends Component {
                     <FontAwesomeIcon
                       type="button"
                       onClick={() => {
-                        this.handleEdit(
+                        this.handleEdit({
                           id,
                           src,
                           textGeo,
@@ -132,7 +106,7 @@ class PagePosts extends Component {
                           titleGeo,
                           titleEng,
                           titleRus
-                        );
+                        });
                       }}
                       className="icons"
                       icon={faEdit}
@@ -184,7 +158,7 @@ class PagePosts extends Component {
                 <FontAwesomeIcon
                   type="button"
                   onClick={() => {
-                    this.handleEdit(
+                    this.handleEdit({
                       id,
                       src,
                       textGeo,
@@ -196,7 +170,7 @@ class PagePosts extends Component {
                       titleGeo,
                       titleEng,
                       titleRus
-                    );
+                    });
                   }}
                   icon={faEdit}
                 />
@@ -272,7 +246,7 @@ class PagePosts extends Component {
                       <FontAwesomeIcon
                         type="button"
                         onClick={() => {
-                          this.handleEdit(
+                          this.handleEdit({
                             id,
                             src,
                             textGeo,
@@ -281,7 +255,7 @@ class PagePosts extends Component {
                             nameGeo,
                             nameEng,
                             nameRus
-                          );
+                          });
                         }}
                         className="icons"
                         icon={faEdit}
@@ -319,7 +293,7 @@ class PagePosts extends Component {
                       style={{ color: "blue" }}
                       type="button"
                       onClick={() => {
-                        this.handleEdit(id, src, textGeo, textEng, textRus);
+                        this.handleEdit({ id, src, textGeo, textEng, textRus });
                       }}
                       className="icons"
                       icon={faEdit}
