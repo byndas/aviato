@@ -1,7 +1,7 @@
 import React from "react";
 import { LanguageContext } from "../context/LanguageContext";
 import { connect } from "react-redux";
-import { nullLiteralTypeAnnotation } from "@babel/types";
+
 
 class SearchResults extends React.Component {
   static contextType = LanguageContext;
@@ -75,17 +75,11 @@ class SearchResults extends React.Component {
             }
           }
           let pageMatchDivArray = pageMatches.map((item, index) => (
-            <div
-              style={{ backgroundColor: "#fff1d0" }}
+            <div style={{ backgroundColor: "#fff1d0" }}
               className="container text-center mt-5 border-bottom"
               id={pageIds[index]}
-              key={pageIds[index]}
-            >
-              <img
-                className="rounded prj-image"
-                src={item.src}
-                alt={item.name}
-              />
+              key={pageIds[index]} >
+              <img  className="rounded prj-image" src={item.src} alt={item.name}/>
               <h2>
                 <strong>
                   {language === "Geo"

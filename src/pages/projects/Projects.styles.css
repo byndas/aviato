@@ -2,11 +2,11 @@
   width: 100%;
   height: auto;
   margin-bottom: -1rem;
-  background-image: url(../../images/jpg/landings/landing03.jpg);
+  /* background-image: url(../../images/jpg/landings/landing03.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  /* background-color: #fff1d0; */
+  background-size: cover; */
+  background-color: #fff1d0;
 }
 
 .project_title {
@@ -18,13 +18,15 @@
 .project_content_title {
   margin: auto;
   background-color: #ffd571;
+  /* background-color: rgba(246,185,6, .7); */
   width: 70%;
   height: auto;
   color: #333;
 }
 
 .project_content_header {
-  background-color:#f6b906;
+  /* background-color:#f6b906; */
+  background-color: rgba(246,185,6, .65);
 }
 
 .active_color{
