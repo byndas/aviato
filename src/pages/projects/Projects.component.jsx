@@ -50,6 +50,7 @@ function Projects({ auth, reduxProjects }) {
       />
     ));
   }
+  const total = reduxProjects !== null && Object.keys(reduxProjects).length
   return (
     <div>
       <div className="project_container">
@@ -82,16 +83,7 @@ function Projects({ auth, reduxProjects }) {
         )}
         {projectList}
         <div style={{ marginTop: "1rem", marginBottom: "1rem" }}>
-          {!auth && (
-            <Pagination
-              paginate={paginate}
-              currPage={currPage}
-              perPage={projectsPerPage}
-              total={
-                reduxProjects !== null && Object.keys(reduxProjects).length
-              }
-            />
-          )}
+          {!auth && total !== projectsPerPage && <Pagination paginate={paginate} currPage={currPage} perPage={projectsPerPage} total={total}/>}
         </div>
       </div>
       <Footer />

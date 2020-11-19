@@ -50,6 +50,7 @@ function News({ auth, reduxNews }) {
       />
     ));
   }
+  const total = reduxNews !== null && Object.values(reduxNews).length
   return (
     <div className="news_background">
       <h1 style={{ color: "#333" }} className="text-center p-4 text-uppercase">
@@ -58,14 +59,7 @@ function News({ auth, reduxNews }) {
       {auth && <AdminForm editObj={state} pageName="news" />}
       <div className="mt-5">
         {newsList}
-        {!auth && (
-          <Pagination
-            paginate={paginate}
-            currPage={currPage}
-            perPage={newsPerPage}
-            total={reduxNews !== null && Object.values(reduxNews).length}
-          />
-        )}
+        {!auth && total !== newsPerPage && <Pagination paginate={paginate} currPage={currPage} perPage={newsPerPage}total={total} />}
       </div>
       <Footer />
     </div>

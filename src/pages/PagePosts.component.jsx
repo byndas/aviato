@@ -126,7 +126,7 @@ class PagePosts extends Component {
               <div className="card-body project-img-text">
                 <img src={src} alt={name} className="rounded prj-image" />
                 <div className="col-md-8">
-                  <p className="card-text">{text.substring(0, 400)}...</p>
+                  <p className="card-text project-text">{text.substring(0, 400)}...</p>
                   <button
                     style={{ fontWeight: "500" }}
                     onClick={this.handleClick}
@@ -143,7 +143,7 @@ class PagePosts extends Component {
               </div>
               <div className="collapse" id={id}>
                 <div className="card-body">
-                  <p className="card-text">{text}</p>
+                  <p className="card-text project-text">{text}</p>
                 </div>
               </div>
             </div>
@@ -199,12 +199,13 @@ class PagePosts extends Component {
               data-toggle="collapse"
               data-target={`#${id}`}
               aria-expanded="false"
-              aria-controls="collapseExample"
-            >
+              aria-controls="collapseExample" >
               {ReadMore}
             </button>
             <div className="collapse" id={id}>
-              <div className="card-body">{text}</div>
+              <div className="card-body">
+                <p className='news-text'>{text}</p>
+                </div>
             </div>
           </div>
         );
@@ -224,9 +225,7 @@ class PagePosts extends Component {
                     className={
                       !expanded
                         ? "fade text-truncate"
-                        : "card-text text-truncate"
-                    }
-                  >
+                        : "card-text text-truncate" }>
                     {text}
                   </p>
                   <button
@@ -273,7 +272,7 @@ class PagePosts extends Component {
                 </div>
                 <div className="collapse" id={id}>
                   <div className="card-body">
-                    <p className="card-text">{text}</p>
+                    <p className="card-text catalog-text">{text}</p>
                   </div>
                 </div>
               </div>
