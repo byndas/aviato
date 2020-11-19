@@ -33,7 +33,7 @@
   animation-delay: 10s;
 }
 .slideshow li:nth-child(3) {
-  background-image: url("../../images/jpg/landings/landing03.jpg");
+  background-image: url("../../images/jpg/landings/landing03.jpeg");
   animation-delay: 20s;
 }
 .slideshow li:nth-child(4) {
@@ -41,7 +41,7 @@
   animation-delay: 30s;
 }
 .slideshow li:nth-child(5) {
-  background-image: url("../../images/jpg/landings/landing05.jpg");
+  background-image: url("../../images/jpg/landings/landing05.jpeg");
   animation-delay: 40s;
 }
 
@@ -169,23 +169,14 @@
 }
 
 @media (min-width: 768px){
-  .windTb {
-    margin-left: 4.5rem;
+  .city {
+    width: 11rem;
   }
-  .windBt {
-      margin-left: 6.3rem;
+  .wind {
+    width: 9.5rem;
   }
-  .windKt {
-      margin-left: 4.6rem;
-  }
-  .windMe {
-      margin-left: 6.3rem;
-  }
-  .windAm {
-      margin-left: 1.85rem;
-  }
-  .windTe {
-      margin-left: 4.9rem;
+  .visibility {
+    width: 13.5rem;
   }
 }
 

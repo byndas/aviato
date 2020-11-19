@@ -19,6 +19,8 @@
   font-weight: 500;
 }
 
+
+
 @media (min-width: 320px){
   .nws-image {
     width: 100%;
@@ -26,10 +28,17 @@
   }
   .news-text {
     width: 100%;
+    text-align: center;
   }
   .read_more {
     margin-top: -3rem;
     margin-left: 1.4rem;
+  }
+}
+
+@media (min-width: 768px){
+  .news-text {
+    text-align: justify;
   }
 }
 

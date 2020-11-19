@@ -8,7 +8,7 @@
 }
 
 .airplain_background {
-  background-color: #f6b906;
+  background-color: #ffd571;
   color: #333;
 }
 
@@ -29,6 +29,9 @@
   }
   .pilot_images {
     margin-left: 8%;
+  }
+  .catalog-text {
+    text-align: center;
   }
 }
 
@@ -64,6 +67,9 @@
   }
   .pilot_images {
     margin-left: 0;
+  }
+  .catalog-text {
+    text-align: justify;
   }
 }
 
