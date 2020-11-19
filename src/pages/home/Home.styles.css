@@ -170,7 +170,7 @@
 
 @media (min-width: 768px){
   .city {
-    width: 11rem;
+    width: 12.5rem;
   }
   .wind {
     width: 9.5rem;
@@ -178,11 +178,14 @@
   .visibility {
     width: 13.5rem;
   }
+  .weather {
+    margin-top: 0;
+  }
 }
 
 @media (min-width: 992px){
   .weather {
-    margin-top: 0;
+    margin-top: 6rem;
   }
 }
 
