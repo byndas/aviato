@@ -3,11 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import "./navbar.styles.css";
 import Logo from "../images/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faInstagram,
-  faYoutube
-} from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faInstagram, faYoutube} from "@fortawesome/free-brands-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { LanguageContext } from "../context/LanguageContext";
 import { fireAuth } from "../Firebase.config";
@@ -32,16 +28,7 @@ class Navbar extends React.Component {
     const { auth, searchInput, setSearchInput } = this.props;
     const { language, handleChange } = this.context;
     const logOut = () => fireAuth.signOut();
-    const {
-      News,
-      Home,
-      AboutUs,
-      Projects,
-      Gallery,
-      Catalog,
-      Contact,
-      Search
-    } = translate[language];
+    const { News,Home,AboutUs,Projects,Gallery,Catalog,Contact,Search } = translate[language];
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark background shadow">
