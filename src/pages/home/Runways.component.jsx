@@ -25,10 +25,10 @@ const Runways = ({tbilisi, batumi, kutaisi, telavi, ambrolauri, mestia}) => {
     }  
   return (
      <div className="list-group">
-         <p className='btn border-bottom text-uppercase font-weight-bold d-flex justify-content-between'>
+        <p className='btn border-bottom text-uppercase font-weight-bold d-flex justify-content-between'>
              <span className='city'>{Tbilisi} : {tbilisi.temp === undefined ? '' : `${tbilisi.temp}°`}  {weathIcon(tbilisi.skye)} </span>
              <span className='wind'>{wind} : {`${tbilisi.wind}${speed}`}</span> <span className='visibility'>{visibility} : {`${tbilisi.visibility}${km}`}</span>
-         </p>  
+        </p> 
          <p className='btn border-bottom text-uppercase font-weight-bold d-flex justify-content-between'>
              <span className='city'>{Batumi} : {batumi.temp === undefined ? '' : `${batumi.temp}°`}  {weathIcon(batumi.skye)}</span>
              <span className='wind'>{wind} : {`${batumi.wind}${speed}`}</span> <span className='visibility'>{visibility} : {`${batumi.visibility}${km}`}</span>
@@ -48,7 +48,7 @@ const Runways = ({tbilisi, batumi, kutaisi, telavi, ambrolauri, mestia}) => {
          <p className='btn border-bottom text-uppercase font-weight-bold d-flex justify-content-between'>
              <span className='city'>{Ambrolauri} : {ambrolauri.temp === undefined ? '' : `${ambrolauri.temp}°`}  {weathIcon(ambrolauri.skye)}</span>
              <span className='wind'>{wind}: {`${ambrolauri.wind}${speed}`} </span>  <span className='visibility'>{visibility} : {`${ambrolauri.visibility}${km}`} </span>
-         </p>   
+         </p>  
     </div>
   )
 };

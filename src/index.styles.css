@@ -8,6 +8,10 @@ body {
 
 }
 
+@font-face {
+  font-family: "BPG Nino Mtavruli";
+  src: local('BPG Nino Mtavruli'), url(./fonts/bpg_nino_mtavruli_normal.ttf) format('woff2');
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
