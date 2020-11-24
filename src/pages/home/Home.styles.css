@@ -12,7 +12,7 @@
 .slideshow li {
   list-style: none;
   width: 100%;
-  height: 100%;
+  height: 121%;
   position: absolute;
   top: 18px;
   left: 0;
@@ -26,22 +26,22 @@
 }
 
 .slideshow li:nth-child(1) {
-  background-image: url("../../images/jpg/landings/landing01.jpg");
+  background-image: url("../../images/jpg/landings/landing01.jpeg");
 }
 .slideshow li:nth-child(2) {
   background-image: url("../../images/jpg/landings/landing02.jpg");
   animation-delay: 10s;
 }
 .slideshow li:nth-child(3) {
-  background-image: url("../../images/jpg/landings/landing03.jpg");
+  background-image: url("../../images/jpg/landings/landing03.jpeg");
   animation-delay: 20s;
 }
 .slideshow li:nth-child(4) {
-  background-image: url("../../images/jpg/landings/landing04.jpg");
+  background-image: url("../../images/jpg/landings/landing04.jpeg");
   animation-delay: 30s;
 }
 .slideshow li:nth-child(5) {
-  background-image: url("../../images/jpg/landings/landing05.jpg");
+  background-image: url("../../images/jpg/landings/landing05.jpeg");
   animation-delay: 40s;
 }
 
@@ -169,29 +169,23 @@
 }
 
 @media (min-width: 768px){
-  .windTb {
-    margin-left: 4.5rem;
+  .city {
+    width: 12.5rem;
   }
-  .windBt {
-      margin-left: 5.3rem;
+  .wind {
+    width: 9.5rem;
   }
-  .windKt {
-      margin-left: 4.6rem;
+  .visibility {
+    width: 13.5rem;
   }
-  .windMe {
-      margin-left: 6.3rem;
-  }
-  .windAm {
-      margin-left: 1.85rem;
-  }
-  .windTe {
-      margin-left: 4.9rem;
+  .weather {
+    margin-top: 0;
   }
 }
 
 @media (min-width: 992px){
   .weather {
-    margin-top: 0;
+    margin-top: 6rem;
   }
 }
 

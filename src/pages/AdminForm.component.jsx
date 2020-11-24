@@ -43,6 +43,7 @@ class AdminForm extends Component {
     textEng: "",
     textRus: ""
   };
+  
   componentWillReceiveProps(nextProps) {
     const nextPropsEditObj = nextProps.editObj;
 
@@ -159,7 +160,7 @@ class AdminForm extends Component {
                 onChange={this.handleChange}
                 type="text"
                 className="form-control"
-                id="name"
+                id="nameGeo"
                 placeholder="Georgian name"
               />
               <input
@@ -168,7 +169,7 @@ class AdminForm extends Component {
                 onChange={this.handleChange}
                 type="text"
                 className="form-control"
-                id="name"
+                id="nameEng"
                 placeholder="English name"
               />
               <input
@@ -177,7 +178,7 @@ class AdminForm extends Component {
                 onChange={this.handleChange}
                 type="text"
                 className="form-control"
-                id="name"
+                id="nameRus"
                 placeholder="Russian name"
               />
             </div>
@@ -191,7 +192,7 @@ class AdminForm extends Component {
                 onChange={this.handleChange}
                 type="text"
                 className="form-control"
-                id="title"
+                id="titleGeo"
                 placeholder="Georgian title"
               />
               <input
@@ -200,7 +201,7 @@ class AdminForm extends Component {
                 onChange={this.handleChange}
                 type="text"
                 className="form-control"
-                id="title"
+                id="titleEng"
                 placeholder="English title"
               />
               <input
@@ -209,7 +210,7 @@ class AdminForm extends Component {
                 onChange={this.handleChange}
                 type="text"
                 className="form-control"
-                id="title"
+                id="titleRus"
                 placeholder="Russian title"
               />
             </div>
@@ -222,7 +223,7 @@ class AdminForm extends Component {
               rows="3"
               onChange={this.handleChange}
               className="form-control"
-              id="text"
+              id="textGeo"
               placeholder="Georgian text"
             ></textarea>
             <textarea
@@ -231,7 +232,7 @@ class AdminForm extends Component {
               rows="3"
               onChange={this.handleChange}
               className="form-control"
-              id="text"
+              id="textEng"
               placeholder="English text"
             ></textarea>
             <textarea
@@ -240,7 +241,7 @@ class AdminForm extends Component {
               rows="3"
               onChange={this.handleChange}
               className="form-control"
-              id="text"
+              id="textRus"
               placeholder="Russian text"
             ></textarea>
           </div>
