@@ -37,11 +37,13 @@ class AirPlane extends Component {
         ));
     }
     return (
-      <div className="container border-bottom">
-        <h1 className="text-center heading p-3 airplane text-uppercase">
+      <div className='airplane-container'>
+        <div className="container border-bottom">
+        <h1 style={{fontFamily: "BPG Nino Mtavruli", fontWeight: 'bold' }} className="text-center heading p-3 airplane text-uppercase">
           {AirPlane}
         </h1>
         <div className="row row-cols-1 row-cols-md-2 mt-5">{planeList}</div>
+        </div>
       </div>
     );
   }

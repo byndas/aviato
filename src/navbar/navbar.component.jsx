@@ -31,17 +31,19 @@ class Navbar extends React.Component {
     const { News,Home,AboutUs,Projects,Gallery,Catalog,Contact,Search } = translate[language];
     return (
       <div>
-        <nav className="navbar navbar-expand-lg navbar-dark background shadow">
+        <nav className="navbar navbar-expand-lg navbar-light background shadow">
           <Link className="navbar-brand" to="/">
+            <div className='logo-container'>
             <img
-              style={{width: '4.5rem'}}
               alt="logo"
               onClick={this.props.clearInput}
               className="logo"
               src={Logo}
             />
+            </div>
           </Link>
           <a
+             style={{color: 'gray'}}
             className="navbar-toggler"
             type="button"
             data-toggle="collapse"
@@ -49,8 +51,7 @@ class Navbar extends React.Component {
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
-            href="/"
-          >
+            href="/">
             <span className="navbar-toggler-icon"></span>
           </a>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -175,7 +176,7 @@ class Navbar extends React.Component {
                   onClick={this.handleClick}
                   className="search__icon"
                   icon={faSearch}
-                  style={{ color: "#f6b906" }}
+                  style={{ color: "#333" }}
                 />
               </button>
             </form>

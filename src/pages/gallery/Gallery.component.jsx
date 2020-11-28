@@ -44,7 +44,7 @@ class Gallery extends Component {
         ));
     }
     return (
-      <div style={{backgroundColor: '#fff1d0'}}>
+      <div style={{backgroundColor: '#fff'}}>
         <div className="container">
           <div
             id="carouselExampleCaptions"
