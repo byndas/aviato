@@ -1,29 +1,41 @@
 .background {
   text-transform: uppercase;
-  background-color: #f6b906;
+  background-color: #fff;
   font-size: 13px;
+  border-bottom: 2px solid #f6b906;
+}
+
+.logo-container {
+  position: relative;
+  width: 3rem;
+  height: 4.5rem;
 }
 
 .logo {
-  border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    width: 7rem;
+    top: -24px;
 }
 .link_color {
-  color: #fff !important;
+  color: gray !important;
   transition: 0.3s;
+
 }
 
 .link_color:focus {
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: #f6b906 !important;
 }
 
 .link_color:hover {
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: #f6b906 !important;
 }
 
 .geo_font {
   font-family: "BPG Nino Mtavruli";
   letter-spacing: 1.5px;
   margin-top: 0.7rem;
+  font-weight: bold;
 }
 
 .eng_rus_font {
@@ -38,13 +50,13 @@
   border-radius: 50%;
   cursor: pointer;
   outline: none;
-  color: #fff;
-  background-color: #f6b906;
+  color: #333;
+  background-color: #fff;
   border: none;
 }
 
 .social_icons {
-  color: #fff;
+  color: #333;
   transition: 0.3s;
 }
 
@@ -97,6 +109,9 @@
     display: flex;
     justify-content: space-between;
   }
+  .logo {
+    left: -2rem;
+  }
 }
 
 @media (min-width: 992px) {
@@ -113,6 +128,9 @@
   .eng_rus_font {
     font-weight: 100;
     letter-spacing: 0;
+  }
+  .logo {
+    left: 1rem;
   }
 }
 

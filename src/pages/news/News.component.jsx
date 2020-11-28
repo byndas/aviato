@@ -53,7 +53,7 @@ function News({ auth, reduxNews }) {
   const total = reduxNews !== null && Object.values(reduxNews).length
   return (
     <div className="news_background">
-      <h1 style={{ color: "#333" }} className="text-center p-4 text-uppercase">
+      <h1 style={{ color: "#333", fontFamily: "BPG Nino Mtavruli", fontWeight: 'bold' }} className="text-center p-4 text-uppercase">
         {News}
       </h1>
       {auth && <AdminForm editObj={state} pageName="news" />}

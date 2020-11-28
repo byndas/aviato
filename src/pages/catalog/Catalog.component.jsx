@@ -21,13 +21,12 @@ class Catalog extends Component {
   render() {
     const { auth, reduxCatalog } = this.props;
     return (
-      <div style={{backgroundColor:'#fff1d0'}}>
+      <div style={{backgroundColor:'#fff'}}>
         {auth && <AdminForm editObj={this.state} pageName="catalog" />}
         <AirPlane
           auth={auth}
           editPostInputs={this.editPostInputs}
-          reduxCatalog={reduxCatalog}
-        />
+          reduxCatalog={reduxCatalog}/>
         <Pilots />
         <Footer />
       </div>

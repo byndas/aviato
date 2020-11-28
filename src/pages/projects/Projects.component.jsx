@@ -54,7 +54,7 @@ function Projects({ auth, reduxProjects }) {
   return (
     <div>
       <div className="project_container">
-        <h1 className="project_title p-5">{Projects}</h1>
+        <h1 style={{fontFamily: "BPG Nino Mtavruli", fontWeight: 'bold' }} className="project_title p-5">{Projects}</h1>
         {auth && (
           <div className="container project_form">
             <button

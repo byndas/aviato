@@ -8,8 +8,16 @@
 }
 
 .airplain_background {
-  background-color: #ffd571;
+  /* background-color: #ffd571; */
+  background-color: rgba(246, 185, 6, .5);
   color: #333;
+}
+
+.airplane-container {
+  background-image: url(../../images/jpg/landings/landing06.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .ctl-image {

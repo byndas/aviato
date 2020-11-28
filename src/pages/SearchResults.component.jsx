@@ -75,7 +75,7 @@ class SearchResults extends React.Component {
             }
           }
           let pageMatchDivArray = pageMatches.map((item, index) => (
-            <div style={{ backgroundColor: "#fff1d0" }}
+            <div style={{ backgroundColor: "#fff" }}
               className="container text-center mt-5 border-bottom"
               id={pageIds[index]}
               key={pageIds[index]} >

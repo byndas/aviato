@@ -11,7 +11,7 @@ function Contact() {
   const { language } = useContext(LanguageContext);
   const { ContactDetails } = translate[language];
   return (
-    <div style={{backgroundColor: '#fff1d0'}}>
+    <div style={{backgroundColor: '#fff'}}>
       <div className="contact_container">
         <div className="container mt-5 position-relative">
           <div className='shadow p-3 mb-5 rounded contact-info'>
